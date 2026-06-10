@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.1",
+  "course_name": "医林独啸斋",
+  "skill_name": "ylindx-medical-cases",
+  "roles": [
+    "mentor",
+    "practitioner"
+  ],
+  "modes": [
+    "mentor",
+    "practitioner"
+  ],
+  "scope": "single-course",
+  "evidence_strategy": "standard",
+  "progress_strategy": "tracked",
+  "source_dir": "D:\\规划\\编程学习\\07_项目实战\\AiCoding\\tcm-zhongyi\\.lineage\\courses\\ylindx",
+  "generated_at": "2026-06-09T19:51:29",
+  "generated_by": {
+    "id": "lineage-skill",
+    "repository": "https://github.com/JuneYaooo/lineage-skill",
+    "script": "scripts/build_course_skill.py"
+  },
+  "provenance": {
+    "watermark": "lineage-skill:course-skill-builder:v0.1",
+    "watermark_visibility": "manifest-only",
+    "source_package": "D:\\规划\\编程学习\\07_项目实战\\AiCoding\\tcm-zhongyi\\.lineage\\courses\\ylindx\\course_package.json",
+    "note": "This packaged course Skill was generated from course materials by lineage-skill."
+  },
+  "reference_status": {
+    "course_package.json": "copied",
+    "course_digest.md": "stubbed",
+    "full_transcript.md": "stubbed",
+    "concept_glossary.md": "stubbed",
+    "quote_index.md": "stubbed",
+    "study_paths.md": "stubbed",
+    "lesson_index.json": "stubbed",
+    "evidence_map.json": "generated",
+    "mentor_playbook.md": "stubbed",
+    "mentor_sessions.md": "stubbed",
+    "learner_progress.json": "stubbed",
+    "playbooks.md": "stubbed",
+    "checklists.md": "stubbed",
+    "templates.md": "stubbed",
+    "case_index.json": "stubbed"
+  },
+  "skill_rules": {
+    "脉法舌法必录": true,
+    "有则必录_无则留空": true,
+    "统计汇报脉舌占比": true,
+    "医案表格化输出": true,
+    "updated_at": "2026-06-09"
+  }
+}
