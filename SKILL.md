@@ -27,6 +27,7 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 | 「难经五分类」 / 「伤寒有五」 / 「中风伤寒湿温热病温病」 / 「经典分类」 / 「五分类」 | `references/broad_typhoid_five_categories.md` | 广义伤寒·视角1·《难经》五分类(中风/伤寒/湿温/热病/温病,40+篇医案) |
 | 「六经辨证」 / 「太阳阳明少阳太阴少阴厥阴」 / 「六经传变」 / 「伤寒论六经」 | `references/broad_typhoid_six_channels.md` | 广义伤寒·视角2·六经传变(太阳→阳明→少阳→三阴,7类传变路径+合病并病处理,40+篇医案) |
 | 「广义伤寒全景」 / 「三视角交叉」 / 「九宫+五分类+六经」 / 「跨视角定位」 | `references/broad_typhoid_overview.md` | 广义伤寒·全景索引(三视角交叉对照+15个跨视角锚点医案+临床实战模板) |
+| 「六经阅读」 / 「六经阅读指南」 / 「按经阅读」 / 「分卷阅读」 / 「六经医案集」 | `references/broad_typhoid_reading_guide.md` | 广义伤寒·六经分卷阅读指南(六卷+三附卷,429篇医案按经层组织,新手/进阶/临床三档路径) |
 | 「咽喉红肿+辛温」 / 「辛温治咽喉」 / 「火郁发之」 / 「喉科六味汤」 | `references/stagnant_heat_yure.md` +《从用辛温药物治疗痈疮肿毒谈到表证的本质》 | 郁热专题 + 咽喉红肿辛温治法 |
 | 「温病实用白术」 / 「湿温用白术」 / 「湿温病白术」 | `references/stagnant_heat_yure.md` + 三仁汤专题 | 湿温用苍术/白术体系(苍术托湿+炒白术固中) |
 | 「栀子豉汤」 / 「栀子豉」 | `references/gardenia_fermented_soybean_formula.md` | 栀子豉汤/表里双解体系 |
@@ -67,8 +68,9 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 12. `references/broad_typhoid_five_categories.md` for 广义伤寒分类·视角1·《难经》五分类 (中风/伤寒/湿温/热病/温病,各病证经典方剂+40篇医案+卫气营血/三焦对接).
 13. `references/broad_typhoid_six_channels.md` for 广义伤寒分类·视角2·六经传变轴 (太阳→阳明→少阳→三阴,7类传变路径+合病并病处理原则,40+篇医案).
 14. `references/broad_typhoid_overview.md` for 广义伤寒分类·全景索引 (三视角交叉对照+15个跨视角锚点医案+临床三步实战模板;64% 医案需三视角联合定位).
-15. `references/course_package.json` for normalized package objects when structured lookup is needed.
-16. `references/full_transcript.md` for original wording when detailed citation is required.
+15. `references/broad_typhoid_reading_guide.md` for 广义伤寒·六经分卷阅读指南 (六卷+三附卷,429 篇医案按经层组织,新手/进阶/临床三档阅读路径).
+16. `references/course_package.json` for normalized package objects when structured lookup is needed.
+17. `references/full_transcript.md` for original wording when detailed citation is required.
 
 ## Topic-Bank Distillation Workflow (Erik's preferred pattern)
 
@@ -185,7 +187,8 @@ At the bottom of each perspective file, the "相关专题交叉链接" section m
 ```
 - **视角1**(经典五分类):references/broad_typhoid_five_categories.md
 - **视角2**(六经传变):references/broad_typhoid_six_channels.md
-- **全景索引**:references/broad_typhoid_overview.md (待写完三视角后)
+- **全景索引**:references/broad_typhoid_overview.md (完成三视角后做)
+- **分卷阅读指南**:references/broad_typhoid_reading_guide.md (完成四视角后做,可选)
 ```
 
 **The 4th overview file (when to write):**
@@ -226,6 +229,50 @@ for (table, nature), kws in matrix.items():
 
 **Pitfall — empirical-first sequencing precondition:** Erik's preference for 视角3-first is ONLY safe when the data signals are already observable in the corpus (e.g. table×nature combinations for 广义伤寒). If the topic is purely theoretical with no clean keyword buckets, ask Erik before assuming empirical-first — the preference is "data-validated axes first, theory second" but theory may need to come first if data signals are weak.
 
+**Step 4e — Reading Guide by Framework (按框架阅读指南) ★新增**
+
+When Erik asks "按 X 体系/框架进行阅读,给我出阅读指南" (e.g. "按六经体系进行阅读"), he wants a **分卷 reading guide** — a structured index that maps every relevant article in the corpus to its place in the framework. This is the natural closing file for any Step 4d multi-perspective series.
+
+**Trigger phrases:**
+- "按 X 体系进行阅读" / "按 X 框架给我出阅读指南" / "分卷阅读" / "六经阅读指南"
+- Comes AFTER Step 4d's 4 files are complete and pushed
+- Erik typically asks this once per meta-topic (e.g. once for 广义伤寒/六经, won't repeat)
+
+**File naming:** `references/broad_<topic>_reading_guide.md`
+
+**Mandatory structure (each 6-jing-style volume):**
+1. **阅读总览 ASCII diagram** showing the卷 structure (六卷 + 附卷 = 6+3卷)
+2. **Per-卷 layout** (6 卷 + 3 附卷):
+   - 提纲证 + 核心病机 + 治法 (one paragraph each)
+   - **3-5 internal groups** per卷 (按病机再细分, e.g. 太阳卷第一组「太阳表虚」、第二组「太阳表实」、第三组「太阳专题」)
+   - Within each group: list 15-30 articles with **★ priority markers** (1-5 星; ★★★★★ = 必读强命中)
+3. **3-tier reading path** (新手/进阶/临床), each with recommended subset
+4. **Follow-up cross-references** to other专题 files (stagnant_heat_yure, sanren_tang, etc.)
+
+**Data extraction (run BEFORE writing):**
+- Single-pass primary方剂优先主方归经 algorithm:
+  ```python
+  six_channels = {
+      "太阳病": {"primary_kws": ["桂枝汤","麻黄汤",...], "secondary_kws": ["太阳病","项强",...]},
+      ...
+  }
+  article_to_channel = {}
+  for f in files:
+      content = open(f).read()
+      scores = {ch: sum(3 if kw in content else 0 for kw in info["primary_kws"])
+                      + sum(1 if kw in content else 0 for kw in info["secondary_kws"])
+                for ch, info in six_channels.items()}
+      best_ch = max(scores, key=scores.get)
+      if scores[best_ch] > 0: article_to_channel[f] = best_ch
+  ```
+  Then sort each卷 by `max(scores.values())` desc → 决定 ★ priority (≥15分=★★★★★, ≥10分=★★★★, ≥5分=★★★).
+- For "★ priority" caliber use the primary-kw hit count + secondary-kw hit count, not raw hit count.
+
+**Pitfall — never shortlist**: Erik wants FULL article lists per卷, not精选 5-10 篇. The reading guide's purpose is to be the FULL INDEX, like a book's table of contents. If a卷 has 126 篇, show all 126 in the guide (use compact formatting).
+
+**Trigger phrases (add to SKILL.md Trigger Vocabulary table):**
+- 「六经阅读」 / 「六经阅读指南」 / 「按经阅读」 / 「分卷阅读」 / 「六经医案集」 → `broad_typhoid_reading_guide.md`
+
 ### Step 5 — Update SKILL.md
 Add the new file to the Reference Priority list above, in the right numerical slot.
 
@@ -250,7 +297,7 @@ Erik's standard closing is 「保存 + 推送到 GitHub」 as a two-step flow. A
   3. `gh api repos/<owner>/<repo> --include` — uses gh auth. If this works → repo exists, you have access. If still 404 → truly doesn't exist
   4. **Ask Erik**: "我看到仓库返回 404,可能是私有仓库。你有改 public 吗?或者需要提供 token?" — never assume, always confirm
 - **Pitfall**: `gh` CLI may NOT be installed (`gh: command not found`). Do NOT auto-install with `brew install gh` without asking Erik first — he may have a preferred installation method or may want to provide a PAT directly. Present the choice and let him decide.
-- **Pitfall**: SKILL.md size mismatch — the GitHub `ylindx-medical-cases` SKILL.md is a simplified public version (~3.7KB), while the local one is the complete running version (~11KB). When syncing, Erik's preference is to PUSH the complete local version upstream, overwriting the simplified one. Confirm with `diff` before pushing if uncertain.
+- **Pitfall**: SKILL.md size — the GitHub `ylindx-medical-cases` SKILL.md is **whatever is currently upstream** (NOT a fixed size; observed sizes have ranged from 11KB to 32KB depending on what was last pushed). The local SKILL.md is always the complete running version. Erik's preference is to PUSH the complete local version upstream, overwriting whatever is there. Use `diff` before pushing to spot-check, especially if the upstream is suspiciously small (could indicate a stale simplified version).
 - **Pitfall — CACHE LAYER**: After pushing, the `raw.githubusercontent.com` URL may return 200 for most files but `HTTP 000` (rate limit / cache miss) for others. Retry individual files with `sleep 3` between attempts, or verify via `gh api repos/<owner>/<repo>/contents/<path>` which goes through GitHub's auth and is not rate-limited the same way.
 
 ### Push flow (concrete commands, after auth)
@@ -338,8 +385,9 @@ For more detail, grep `references/full_transcript.md` with context lines to extr
 - `references/broad_typhoid_five_categories.md` — 广义伤寒分类·《难经》五分类(视角1,中风/伤寒/湿温/热病/温病,40+篇医案+卫气营血对接).
 - `references/broad_typhoid_six_channels.md` — 广义伤寒分类·六经传变(视角2,太阳→阳明→少阳→太阴→少阴→厥阴,7类传变路径+40+篇医案).
 - `references/broad_typhoid_overview.md` — 广义伤寒分类·全景索引(三视角交叉对照,15个跨视角锚点医案,临床三步实战模板).
+- `references/broad_typhoid_reading_guide.md` — 广义伤寒·六经分卷阅读指南(六卷+三附卷,429篇医案按经层组织,新手/进阶/临床三档阅读路径).
 
-**广义伤寒四视角系列约定:** 四个文件互为对偶,共享触发词表与一句话心法结构。视角1=经典理论(《难经》),视角2=传变轴(《伤寒论》),视角3=寒温一统(临床综合),全景索引=跨视角交叉。Erik 的标准交付顺序是 **3 → 1 → 2 → 全景索引** (empirical-first)。完整方法论见 SKILL.md "Step 4d — Multi-Perspective Classification Workflow"。
+**广义伤寒五视角系列约定:** 五个文件互为对偶,共享触发词表与一句话心法结构。视角1=经典理论(《难经》),视角2=传变轴(《伤寒论》),视角3=寒温一统(临床综合),全景索引=跨视角交叉,分卷阅读指南=实战阅读路径。Erik 的标准交付顺序是 **3 → 1 → 2 → 全景索引 → 分卷阅读指南** (empirical-first)。完整方法论见 SKILL.md "Step 4d — Multi-Perspective Classification Workflow" 和 "Step 4e — Reading Guide by Framework"。
 
 ### README Writing Template
 When Erik asks you to write a README for a new public mirror (e.g. "我们需要写一下 readme"), use `templates/skill_readme.md` as the starting template. It is a blank, fill-in-the-blank version of the ylindx-medical-cases README with the 10 writing notes that emerged from actually shipping that README. Key invariants:
