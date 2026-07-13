@@ -1,6 +1,6 @@
 ---
 name: yilin-mentor-lineage
-description: >
+description: >-
   Use this skill when the user asks about 医林独啸斋 and needs packaged-course
   support for a source-grounded course mentor that guides learning, practice,
   review, and application.
@@ -11,6 +11,34 @@ description: >
 You are a course-grounded skill for 医林独啸斋.
 
 Active role(s): Mentor.
+
+## Trigger Vocabulary (Erik's quick-load keywords)
+
+Erik uses short Chinese phrases to invoke a specific topic bank by name. When you hear one of these, **load the matching references file immediately** — do not re-derive from scratch:
+
+| Trigger phrase | File to load | Topic |
+|---|---|---|
+| 「三仁汤」 / 「三仁汤专题」 | `references/sanren_tang_formula.md` | 三仁汤方证、231处文献、合方体系 |
+| 「湿热」 / 「湿热病机」 / 「湿热三方」 | `references/damp_heat_three_formulas.md` | 三仁汤 vs 甘露消毒丹 vs 藿朴夏苓汤 |
+| 「寒湿」 / 「寒湿和湿热怎么鉴别」 / 「寒热」 | `references/cold_damp_vs_damp_heat.md` | 寒湿 vs 湿热 鉴别、湿热假寒陷阱 |
+| 「郁热」 / 「升降散」 / 「宣透郁热」 | `references/stagnant_heat_yure.md` | 郁热/火郁/赵绍琴理法 |
+| 「升降散变法」 / 「升降散化裁」 / 「蝉蜕僵蚕替代」 / 「大黄怎么替换」 | `references/sheng_jiang_san_variants.md` | 升降散29种变法速查,含原方/郁金代姜黄/蚕砂代大黄/合方升级 |
+| 「广义伤寒」 / 「寒温一统」 / 「九宫格」 / 「病位+病性」 / 「合病并病」 | `references/broad_typhoid_nine_grid.md` | 广义伤寒九宫格分类(视角3,表/半/里 × 寒/热/湿 + 9类跨格专题,456篇统计) |
+| 「难经五分类」 / 「伤寒有五」 / 「中风伤寒湿温热病温病」 / 「经典分类」 / 「五分类」 | `references/broad_typhoid_five_categories.md` | 广义伤寒·视角1·《难经》五分类(中风/伤寒/湿温/热病/温病,40+篇医案) |
+| 「六经辨证」 / 「太阳阳明少阳太阴少阴厥阴」 / 「六经传变」 / 「伤寒论六经」 | `references/broad_typhoid_six_channels.md` | 广义伤寒·视角2·六经传变(太阳→阳明→少阳→三阴,7类传变路径+合病并病处理,40+篇医案) |
+| 「广义伤寒全景」 / 「三视角交叉」 / 「九宫+五分类+六经」 / 「跨视角定位」 | `references/broad_typhoid_overview.md` | 广义伤寒·全景索引(三视角交叉对照+15个跨视角锚点医案+临床实战模板) |
+| 「咽喉红肿+辛温」 / 「辛温治咽喉」 / 「火郁发之」 / 「喉科六味汤」 | `references/stagnant_heat_yure.md` +《从用辛温药物治疗痈疮肿毒谈到表证的本质》 | 郁热专题 + 咽喉红肿辛温治法 |
+| 「温病实用白术」 / 「湿温用白术」 / 「湿温病白术」 | `references/stagnant_heat_yure.md` + 三仁汤专题 | 湿温用苍术/白术体系(苍术托湿+炒白术固中) |
+| 「栀子豉汤」 / 「栀子豉」 | `references/gardenia_fermented_soybean_formula.md` | 栀子豉汤/表里双解体系 |
+| 「瘀血」 / 「淤血」 | `references/blood_stasis_formulas.md` | 瘀血专题 (10方剂、69篇) |
+| 「这个方子」 / 「方子构成」 / 任意药物列表 | → run Reverse-Lookup Workflow (below) | 拆方 → 锁定核心方 → 调专题 |
+| 「帮我看看这个病例」 / 任意症状描述 | → run Reverse-Lookup Workflow | 拆证 → 锁定病机 → 调专题 |
+
+**Pitfall**: Don't say "让我先查一下" before loading. Load the file first, then read the relevant sections. Erik has zero tolerance for "I'll just describe it from memory" — he wants the original phrasing with line numbers.
+
+**Related skills** (cross-link from this skill to others):
+- `github-workflow` — owns `gh` CLI auth, PAT handling, branch strategy, push mechanics. Defer all GitHub operations to it.
+- `course-material-distillation` — owns the conversion of article collections into Hermes skills via lineage-skill. Use it if Erik wants to add a new course to the library.
 
 ## Scope
 
@@ -34,8 +62,13 @@ Active role(s): Mentor.
 7. `references/damp_heat_three_formulas.md` for 湿热病机专题 (三仁汤 vs 甘露消毒丹 vs 藿朴夏苓汤三方对比, 含舌象决策图与临床路径).
 8. `references/cold_damp_vs_damp_heat.md` for 寒湿 vs 湿热 鉴别专题 (按部位分论寒湿、湿热假寒三大陷阱、5步速判法、病机转化).
 9. `references/sanren_tang_formula.md` for 三仁汤 formula-case mapping (分消湿热、宣上畅中渗下、合方体系、三禁, 231处文献).
-10. `references/course_package.json` for normalized package objects when structured lookup is needed.
-11. `references/full_transcript.md` for original wording when detailed citation is required.
+10. `references/sheng_jiang_san_variants.md` for 升降散变法·医案·处方汇编 (29种变法速查,与 stagnant_heat_yure.md 病机专题对偶,聚焦"具体怎么改方").
+11. `references/broad_typhoid_nine_grid.md` for 广义伤寒分类·视角3·寒温一统九宫格 (表/半表半里/里 × 寒/热/湿 = 9 格 + 9 类跨格专题,456 篇统计).
+12. `references/broad_typhoid_five_categories.md` for 广义伤寒分类·视角1·《难经》五分类 (中风/伤寒/湿温/热病/温病,各病证经典方剂+40篇医案+卫气营血/三焦对接).
+13. `references/broad_typhoid_six_channels.md` for 广义伤寒分类·视角2·六经传变轴 (太阳→阳明→少阳→三阴,7类传变路径+合病并病处理原则,40+篇医案).
+14. `references/broad_typhoid_overview.md` for 广义伤寒分类·全景索引 (三视角交叉对照+15个跨视角锚点医案+临床三步实战模板;64% 医案需三视角联合定位).
+15. `references/course_package.json` for normalized package objects when structured lookup is needed.
+16. `references/full_transcript.md` for original wording when detailed citation is required.
 
 ## Topic-Bank Distillation Workflow (Erik's preferred pattern)
 
@@ -50,33 +83,175 @@ Use `rg -l "<keyword>"` against `/Users/applemima1111/AiCoding/医林独啸斋/m
 Filter `basename` to find articles with "专题", "经验总结", "粗述", or "解析" in the title — these are tsp南极's systematic expositions, not single-case stories. Read those fully.
 
 ### Step 3 — Distill to a topic bank file
-Write to `references/<topic>.md` following the `blood_stasis_formulas.md` template:
-- 频次排名 (frequency table)
-- 核心病机 (pathomechanism)
-- 关键条文 (canonical quotes)
-- 临床应用谱 (clinical spectrum with indexed cases)
-- 配伍规律 (combination patterns)
-- 关键参考文章清单 (article index with star ratings for priority)
-- 一句话核心心法 (one-line summary)
+Write to `references/<topic>.md` following the `blood_stasis_formulas.md` template, but enrich with the sections that have proven high-value across topics (湿热、寒湿、升降散、鼻三药等):
+
+**Core sections (always include):**
+- 医林独啸斋核心定位 (golden quotes with line numbers from full_transcript.md — minimum 5-8 quotes)
+- 一句话核心心法 (one-line summary at the very end)
+
+**For 方剂对比专题 (formula comparison, e.g. 湿热三方):**
+- 三方源流与组成对比 (source + composition table)
+- 病机三分法 (ASCII tree diagram showing the three branches)
+- 核心病机与辨证要点 (detailed comparison table)
+- 三方用药思路图示 (separate ASCII box diagrams for each formula's structure)
+- 舌象速查表 (按舌苔 + 按舌质, two tables)
+- 临床决策流程图 (decision tree with branches and endings)
+- 实战医案索引 (table of case locations with line numbers)
+- 关键配伍规律 / 合方体系 (combination patterns)
+- 关键禁忌与注意事项 (with classic prohibitions)
+- 辨证速查 (symptom → prescription quick lookup)
+- 相关主题链接 (cross-link to other knowledge banks)
+
+**For 鉴别专题 (differential diagnosis, e.g. 寒湿 vs 湿热):**
+- 总览对比表 (master comparison table)
+- 经典鉴别金句 (6+ direct quotes with line numbers)
+- 分泌物鉴别决策树 (secretion-based diagnostic tree)
+- 「假X」三大陷阱 (e.g. 「湿热假寒」 三大临床陷阱)
+- 5步速判法 (5-step rapid diagnostic)
+- 一字之差 治法警示 (warning panel: same 利湿 different 温清)
+- 合方可能性 (when both patterns coexist)
+- 病机转化 (寒→热, 湿→燥 dynamic conversion)
+
+**Citing conventions:**
+- Every quote from full_transcript.md must include the line number in parentheses, e.g. `(line 42893)`
+- Use direct quotes (>) for 南极师's exact wording; use 「引号」 for paraphrased concepts
+- Mark "推理/综合" vs "原文" clearly when blending course material with synthesis
 
 ### Step 4 — Cross-link related banks
 If two topic banks share articles (e.g. 栀子豉汤 appears in 郁热 cases), link them with explicit "详见 references/..." pointers so future agents can navigate.
 
+### Step 4b — Distinguish comparison vs differentiation files
+When the user asks for "A vs B" (方剂对比) or "how to tell A from B" (寒热/虚实/表里鉴别), recognize that these are TWO different file archetypes that often emerge from the same conversation:
+
+- **Comparison file** (`<topic>_comparison.md` or `<topic>_three_formulas.md`): multiple formulas that share an indication, side-by-side with composition + 病机 + 适应症. Erik's use case: "三仁汤 vs 甘露消毒丹 vs 藿朴夏苓汤" → `damp_heat_three_formulas.md`.
+- **Differentiation file** (`<X>_vs_<Y>.md`): two patterns that look similar but require OPPOSITE treatment. Erik's use case: "寒湿 vs 湿热" → `cold_damp_vs_damp_heat.md` (this is what got created after 湿热三方 — Erik explicitly asked "如何是寒湿呢,如何区分鉴别呢?" once the comparison was complete).
+
+Pattern: when an asymmetric "vs" question follows a comparison question, the differentiation file is the natural follow-up. Offer to save it as a SEPARATE file rather than appending to the comparison.
+
+### Step 4c — 病机 vs 变法 dual-file pattern (Erik's preferred split)
+When a topic (formula or治法) is heavily used AND has many documented modifications in the corpus — like 升降散 (29变法 in 72 articles), or potentially 三仁汤 / 小柴胡汤 / 桂枝汤 — split the topic bank into TWO files along orthogonal axes:
+
+- **病机 file** (`<topic>_yure.md` / `<topic>_pathogenesis.md`): "why this works" — the disease mechanism, original formula structure, 赵绍琴/某师 inheritance, key辨别 points. Erik reads this when asking "为什么用这个方?"
+- **变法 file** (`<topic>_variants.md`): "具体怎么改方" — every documented modification, numbered `变法[1]` ... `变法[N]`, ending with an ASCII decision tree ("要改哪一味?"). Erik reads this when asking "这个方子能不能改?" or "升降散大黄怎么替换?"
+
+Concrete example (already shipped):
+- `references/stagnant_heat_yure.md` (郁热/火郁/升降散病机, 赵绍琴理法, 146篇文章)
+- `references/sheng_jiang_san_variants.md` (升降散29种变法速查, 与病机专题对偶)
+
+The two files互链 at the top via `> 与 references/<other>.<md>(病机专题)对偶`. Trigger phrases must distinguish: 「郁热」/「升降散」 → 病机 file; 「升降散变法」/「升降散化裁」/「蝉蜕僵蚕替代」 → 变法 file.
+
+**When to apply this split**: only when (a) the formula has 50+ articles in the corpus AND (b) the变法 count exceeds ~10. Smaller topics stay in one file with both病机 and变法 sections.
+
+### Step 4d — Multi-Perspective Classification Workflow (多视角分类法) ★新增
+
+When Erik asks to classify a **broad TCM topic** (e.g. 广义伤寒、脏腑辨证、气血津液、八纲、舌诊、脉诊) that is too large for a single方剂- or病机-focused topic bank, **decompose the topic into 3 complementary perspectives** AND a 4th cross-reference file. This pattern emerged from the 广义伤寒四视角 (broad_typhoid_*) series in July 2026 and is now the standard for cross-cutting classification tasks.
+
+**Four files, in Erik's preferred order:**
+
+1. **视角3 — Modern Synthesis / Empirical Grid (寒温一统/九宫格)** — modern synthesis reflecting how the topic is actually used in clinical practice. e.g. 表/半/里 × 寒/热/湿 = 9格 → `broad_typhoid_nine_grid.md` *(always write FIRST when empirical-first sequencing is invoked)*
+2. **视角1 — Classical Theory (经典理论)** — historical/classical taxonomy from canonical texts. e.g. 《难经·五十八难》「伤寒有五」 → `broad_typhoid_five_categories.md`
+3. **视角2 — Six-Channel / Traditional Axis (六经/传变轴)** — the dominant traditional framework for that topic. e.g. 太阳→阳明→少阳→太阴→少阴→厥阴 → `broad_typhoid_six_channels.md`
+4. **全景索引 (Cross-Reference Overview)** — once all three perspectives exist, write a 4th file that maps cross-perspective coverage (which articles hit multiple axes), provides anchor cases that span all three, and gives a clinical workflow template. e.g. `broad_typhoid_overview.md`
+
+**Erik's preferred sequencing: empirical-first, classical-second, overview-last.** When Erik says "全部来一遍" (do all three), he usually means start with 视角3 because it has the freshest data signal (counts of which combinations actually appear in the corpus), then 视角1 for the theoretical grounding, then 视角2 (often 伤寒论 axis) because it's the most well-known and easiest to fill in once the data shape is clear. The 4th overview file comes only after all 3 perspectives exist. **Always confirm with `clarify` before starting if the order is ambiguous** — Erik has said "现在让我们先从3开始" explicitly when he wants empirical-first.
+
+**File naming convention:**
+```
+references/broad_<topic>_<perspective>.md
+references/broad_<topic>_overview.md
+```
+- `broad_typhoid_five_categories.md` — 视角1, 《难经》五分类
+- `broad_typhoid_six_channels.md` — 视角2, 六经传变
+- `broad_typhoid_nine_grid.md` — 视角3, 寒温一统九宫格
+- `broad_typhoid_overview.md` — 全景索引, 跨视角交叉引用
+
+For other classification topics, follow the same pattern: `broad_<topic>_<perspective_key>.md`. The `broad_` prefix signals "this is a cross-cutting classifier, not a方剂/病机 topic bank."
+
+**Each perspective file must contain:**
+
+1. **原始定义与历史出处** — the original text/source the perspective comes from (e.g. 《难经·五十八难》原文)
+2. **核心鉴别表** — a table summarizing the categories within the perspective (病因/病性/脉象/方剂)
+3. **医林独啸斋覆盖统计** — actual hit counts from the corpus (run grep/execute_code to get the numbers; this grounds the theory in evidence)
+4. **逐类详解** — one section per category, each with: 辨证要点 + 代表方剂 + 典型案例 (table format)
+5. **复合病机** — list of cross-category combinations actually seen in the corpus (10+ is normal)
+6. **与其他辨证体系的对接** — explicit cross-link to other perspectives (卫气营血/三焦 for温病; 六经 for伤寒; etc.)
+7. **核心论断** — direct quotes from 南极师 (with file:line references)
+8. **回归原方决策树** — ASCII tree from症状 to方
+9. **相关专题交叉链接** — explicit pointers to the other perspective files + existing专题 files (stagnant_heat_yure, sheng_jiang_san_variants, sanren_tang_formula, etc.)
+10. **一句话核心心法** — closing one-liner (mandatory per Erik's preference)
+
+**Cross-linking between perspectives:**
+At the bottom of each perspective file, the "相关专题交叉链接" section must explicitly point to the OTHER perspective files (whether completed or pending). For 视角3 (the first one written), mark the others as "(待补)" so future agents know what to fill in. Example from broad_typhoid_nine_grid.md:
+```
+- **视角1**(经典五分类):references/broad_typhoid_five_categories.md
+- **视角2**(六经传变):references/broad_typhoid_six_channels.md
+- **全景索引**:references/broad_typhoid_overview.md (待写完三视角后)
+```
+
+**The 4th overview file (when to write):**
+After all 3 perspectives exist, write a cross-reference overview file that:
+- Counts which articles hit MULTIPLE perspectives (e.g. "292 篇同时命中三视角 = 64%")
+- Lists 10-15 anchor articles that span the most cells across perspectives
+- Provides a clinical "three-step positioning" workflow (九宫格定位 → 五分类定位 → 六经定位)
+- Groups articles by合病/并病/传变 patterns, not just by single perspective
+
+**Pitfall — pending-marker cleanup after filling a视角:**
+When you fill in a previously-pending视角 (e.g. write `broad_typhoid_six_channels.md` after it was marked "待补" in the other files), you MUST grep for "(待补)" or "(pending)" across ALL related files (SKILL.md trigger table, Reference Priority, Pre-built Knowledge Banks, AND every其他 broad_<topic>_*.md file) and clean them up. The pending markers are useful prompts but become noise once filled. Use `grep -rn "待补" references/broad_*.md SKILL.md` to find all stale markers in one shot. Failure to clean creates duplicate or contradictory entries in SKILL.md.
+
+**Data extraction pattern (run before writing):**
+```python
+# In execute_code, scan the markdown corpus for keyword buckets per perspective
+matrix = {
+    ("表","寒"): ["麻黄汤","桂枝汤","葛根汤","表寒","脉浮紧","恶寒",...],
+    ...
+}
+for (table, nature), kws in matrix.items():
+    matched = set()
+    for f in files:
+        content = open(...).read()
+        for kw in kws:
+            if kw in content:
+                matched.add(f)
+                break
+    counts[(table, nature)] = len(matched)
+```
+
+**Trigger phrases (add to SKILL.md Trigger Vocabulary table):**
+- 「广义伤寒」 / 「寒温一统」 / 「九宫格」 / 「病位+病性」 / 「合病并病」 → `broad_typhoid_nine_grid.md`
+- 「难经五分类」 / 「伤寒有五」 / 「中风伤寒湿温热病温病」 / 「经典分类」 / 「五分类」 → `broad_typhoid_five_categories.md`
+- 「六经传变」 / 「太阳阳明少阳」 / 「六经辨证」 → `broad_typhoid_six_channels.md`
+- 「广义伤寒全景」 / 「三视角交叉」 / 「跨视角定位」 → `broad_typhoid_overview.md`
+
+**Pitfall — do NOT confuse multi-perspective classification with the comparison/differentiation split (Step 4b) or the病机/变法 split (Step 4c).** Those splits are about ONE topic from TWO angles. Multi-perspective classification is about ONE meta-topic from THREE independent classification axes. The output is 3 perspective files + 1 overview file. The numbering (视角1/2/3) is fixed — don't renumber when filling in a pending视角 retroactively; cite it as "视角2(六经)" consistently.
+
+**Pitfall — empirical-first sequencing precondition:** Erik's preference for 视角3-first is ONLY safe when the data signals are already observable in the corpus (e.g. table×nature combinations for 广义伤寒). If the topic is purely theoretical with no clean keyword buckets, ask Erik before assuming empirical-first — the preference is "data-validated axes first, theory second" but theory may need to come first if data signals are weak.
+
 ### Step 5 — Update SKILL.md
 Add the new file to the Reference Priority list above, in the right numerical slot.
+
+**Pitfall — SKILL.md Reference Priority numbering trap**: when patching the numbered Reference Priority list, your patch's `old_string` must match the CURRENT line numbers, not the original ones. If a prior patch already inserted an entry above your target, the line numbers shift down by 1 and your patch may silently duplicate an existing entry (e.g. patching entry #9 to add a new one before it, but #9 was already an earlier patch's target, so you end up with TWO entries pointing to the same file). Always `grep -n "<file_to_edit>" SKILL.md` after each patch to verify the numbering is still monotonic and unique. If a patch reports a "duplicate match" error, do NOT use `replace_all=true` — re-read the file, find the new actual location, and patch with the correct context.
 
 ### Step 6 — Offer to push to GitHub (Erik's preferred closing)
 Erik's standard closing is 「保存 + 推送到 GitHub」 as a two-step flow. After writing the new references file and updating SKILL.md, ask the user if they want to push to the public mirror. If yes:
 
-- **Target repo**: `https://github.com/erikgqp8645/ylindx-medical-cases` (public, default branch = `master` — note: NOT `main`)
+- **Target repo**: `https://github.com/erikgqp8645/ylindx-medical-cases` (default branch = `master` — note: NOT `main`)
 - **Local source**: `~/.hermes/skills/yilin-mentor-lineage/` (the live skill directory)
+- **For all GitHub operations, defer to the `github-workflow` skill** — it owns `gh` CLI auth, PAT handling, branch strategy, and push mechanics. This skill's only job here is to know WHEN to push and WHAT to push.
 - **Push mechanism** (in order of preference):
-  1. `gh auth login --with-token < <PAT>` then `gh repo sync` or direct git push
+  1. Load `github-workflow` skill → use its `gh repo sync` or git push helpers
   2. `export GH_TOKEN=<PAT>` then git push (for headless/automated use)
   3. GitHub CLI not installed → `brew install gh` first, then fall back to (1) or (2)
 - **Pitfall**: Do NOT clone via HTTPS first and then try to push back without setting the remote — clone from the working source, not from a new clone, to preserve any uncommitted state.
 - **Pitfall**: PAT must have `repo` scope (classic) or `Contents: Read and write` on this specific repo (fine-grained). The classic `repo` scope is the safer default.
-- **Pitfall**: GitHub 404 from curl on a private repo does NOT mean the repo is missing — try a public API call first to confirm visibility before declaring "not found". Erik has been seen flipping private→public in mid-conversation.
+- **Pitfall — REPO VISIBILITY 404 TRAP**: GitHub 404 from `curl https://api.github.com/repos/...` does NOT necessarily mean the repo is missing. The repo may be PRIVATE — `curl` with no auth will return 404 for private repos. Erik has been observed flipping private→public mid-conversation. **Always re-check the visibility with `gh api repos/<owner>/<repo>` (which uses the gh auth context) before declaring "repo not found".** Only after gh confirms the repo is inaccessible should you treat the 404 as authoritative.
+- **Pitfall — DIAGNOSING REPO 404**: Workflow when given a repo URL that returns 404:
+  1. `curl -sI https://github.com/<owner>/<repo>` — does the page exist? If 404 → repo doesn't exist OR is private and you're not authed
+  2. `find ~ -maxdepth 4 -name "<repo>*.git" -type d` — is it cloned locally? If yes, use that clone, no need to re-clone
+  3. `gh api repos/<owner>/<repo> --include` — uses gh auth. If this works → repo exists, you have access. If still 404 → truly doesn't exist
+  4. **Ask Erik**: "我看到仓库返回 404,可能是私有仓库。你有改 public 吗?或者需要提供 token?" — never assume, always confirm
+- **Pitfall**: `gh` CLI may NOT be installed (`gh: command not found`). Do NOT auto-install with `brew install gh` without asking Erik first — he may have a preferred installation method or may want to provide a PAT directly. Present the choice and let him decide.
+- **Pitfall**: SKILL.md size mismatch — the GitHub `ylindx-medical-cases` SKILL.md is a simplified public version (~3.7KB), while the local one is the complete running version (~11KB). When syncing, Erik's preference is to PUSH the complete local version upstream, overwriting the simplified one. Confirm with `diff` before pushing if uncertain.
+- **Pitfall — CACHE LAYER**: After pushing, the `raw.githubusercontent.com` URL may return 200 for most files but `HTTP 000` (rate limit / cache miss) for others. Retry individual files with `sleep 3` between attempts, or verify via `gh api repos/<owner>/<repo>/contents/<path>` which goes through GitHub's auth and is not rate-limited the same way.
 
 ### Push flow (concrete commands, after auth)
 
@@ -158,6 +333,24 @@ For more detail, grep `references/full_transcript.md` with context lines to extr
 - `references/sanren_tang_formula.md` — 三仁汤 formula-case mapping (分消三焦湿热、宣上畅中渗下架构、8大合方体系、三禁要旨).
 - `references/damp_heat_three_formulas.md` — 湿热病机专题 (三仁汤 vs 甘露消毒丹 vs 藿朴夏苓汤三方对比, 含舌象决策图、临床路径、医案索引).
 - `references/cold_damp_vs_damp_heat.md` — 寒湿 vs 湿热 鉴别专题 (按部位分论寒湿、湿热假寒三大陷阱、5步速判法、病机转化).
+- `references/sheng_jiang_san_variants.md` — 升降散变法·医案·处方汇编 (29种变法:原方/郁金代姜黄/蚕砂代大黄/合方升级,含18篇必读文章索引).
+- `references/broad_typhoid_nine_grid.md` — 广义伤寒分类·寒温一统九宫格(视角3,含35+篇核心医案,医林独啸斋456篇统计).
+- `references/broad_typhoid_five_categories.md` — 广义伤寒分类·《难经》五分类(视角1,中风/伤寒/湿温/热病/温病,40+篇医案+卫气营血对接).
+- `references/broad_typhoid_six_channels.md` — 广义伤寒分类·六经传变(视角2,太阳→阳明→少阳→太阴→少阴→厥阴,7类传变路径+40+篇医案).
+- `references/broad_typhoid_overview.md` — 广义伤寒分类·全景索引(三视角交叉对照,15个跨视角锚点医案,临床三步实战模板).
+
+**广义伤寒四视角系列约定:** 四个文件互为对偶,共享触发词表与一句话心法结构。视角1=经典理论(《难经》),视角2=传变轴(《伤寒论》),视角3=寒温一统(临床综合),全景索引=跨视角交叉。Erik 的标准交付顺序是 **3 → 1 → 2 → 全景索引** (empirical-first)。完整方法论见 SKILL.md "Step 4d — Multi-Perspective Classification Workflow"。
+
+### README Writing Template
+When Erik asks you to write a README for a new public mirror (e.g. "我们需要写一下 readme"), use `templates/skill_readme.md` as the starting template. It is a blank, fill-in-the-blank version of the ylindx-medical-cases README with the 10 writing notes that emerged from actually shipping that README. Key invariants:
+
+- Fixed section order: 项目简介 → 数据规模 → 仓库结构 → 专题索引 → 快速开始 → 数据生成 → 内容来源 → 引用版权 → 免责声明 → 相关项目 → 贡献 → 许可证 → 一句话核心心法
+- 数据规模表必须有具体数字
+- 专题索引列全部,不要省略号
+- ⭐ 标记重要专题
+- 免责声明对医案/法律/金融类不可省
+- 结尾用「」一句话心法收束
+- 100-150 行最佳,过长的拆到 references/
 
 ### Rebuilding the Course
 - `references/conversion_workflow.md` — How to rebuild from source markdown (lineage-skill setup, custom converter, pitfalls).
