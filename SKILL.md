@@ -34,6 +34,8 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 | 「小建中汤」 / 「建中汤」 / 「当归建中」 / 「黄芪建中」 / 「归芪建中」 / 「大建中」 | `references/jianzhong_tang_formula.md` | 小建中汤变法体系(8大类)+《千金》建中类方+实战医案,中医世家 225 卡片 + 医林独啸斋 61 篇文章 |
 | 「瘀血」 / 「淤血」 | `references/blood_stasis_formulas.md` | 瘀血专题 (10方剂、69篇) |
 | 「祛瘀方对比」 / 「逐瘀方对比」 / 「王清任逐瘀五方」 | `references/yuxue_fangji_comparison.md` | 11 大祛瘀方剂并列对比(王清任 5 方 + 经方 4 首 + 时方 2 首,含 5 步决策树 + 实战医案) |
+| 「张驰误用汗法」 / 「张驰误治」 / 「张驰火逆」 / 「坏病条文」 / 「汗下失序」 | `references/zhangchi_misuse_hanfa_xref.md` | 张驰老师《伤寒论》「误用汗法/火逆/坏病」专题 × 医林独啸斋医案 跨库对照(76 条条文、25 条命中、139 篇医案映射) |
+| 「苓桂术甘实案」 / 「麻黄升麻实案」 / 「张驰 67 条 357 条」 / 「阳虚水泛医案」 / 「寒热错杂医案」 | `references/zhangchi_67_357_cases_spectrum.md` | 张驰《伤寒论》67 条苓桂术甘 + 357 条麻黄升麻 跨库实案谱(70 篇医案逐篇展开,含主诉/方剂/病机/张驰对应) |
 | 「这个方子」 / 「方子构成」 / 任意药物列表 | → run Reverse-Lookup Workflow (below) | 拆方 → 锁定核心方 → 调专题 |
 | 「帮我看看这个病例」 / 任意症状描述 | → run Reverse-Lookup Workflow | 拆证 → 锁定病机 → 调专题 |
 
@@ -67,14 +69,16 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 9. `references/damp_heat_three_formulas.md` for 湿热病机专题 (三仁汤 vs 甘露消毒丹 vs 藿朴夏苓汤三方对比, 含舌象决策图与临床路径).
 10. `references/cold_damp_vs_damp_heat.md` for 寒湿 vs 湿热 鉴别专题 (按部位分论寒湿、湿热假寒三大陷阱、5步速判法、病机转化).
 11. `references/sanren_tang_formula.md` for 三仁汤 formula-case mapping (分消湿热、宣上畅中渗下、合方体系、三禁, 231处文献).
-12. `references/sheng_jiang_san_variants.md` for 升降散变法·医案·处方汇编 (29种变法速查,与 stagnant_heat_yure.md 病机专题对偶,聚焦"具体怎么改方").
-13. `references/broad_typhoid_nine_grid.md` for 广义伤寒分类·视角3·寒温一统九宫格 (表/半表半里/里 × 寒/热/湿 = 9 格 + 9 类跨格专题,456 篇统计).
-14. `references/broad_typhoid_five_categories.md` for 广义伤寒分类·视角1·《难经》五分类 (中风/伤寒/湿温/热病/温病,各病证经典方剂+40篇医案+卫气营血/三焦对接).
-15. `references/broad_typhoid_six_channels.md` for 广义伤寒分类·视角2·六经传变轴 (太阳→阳明→少阳→太阴→少阴→厥阴,7类传变路径+合病并病处理原则,40+篇医案).
-16. `references/broad_typhoid_overview.md` for 广义伤寒分类·全景索引 (三视角交叉对照+15个跨视角锚点医案+临床三步实战模板;64% 医案需三视角联合定位).
-17. `references/broad_typhoid_reading_guide.md` for 广义伤寒·六经分卷阅读指南 (六卷+三附卷,429 篇医案按经层组织,新手/进阶/临床三档阅读路径).
-18. `references/course_package.json` for normalized package objects when structured lookup is needed.
-19. `references/full_transcript.md` for original wording when detailed citation is required.
+12. `references/zhangchi_misuse_hanfa_xref.md` for 张驰老师《伤寒论》「误用汗法/火逆/坏病」专题 × 医林独啸斋医案 跨库对照手册 (76 条误治条文按九阶段组织,25 条命中,139 篇医案映射,6 篇必读锚点).
+13. `references/zhangchi_67_357_cases_spectrum.md` for 张驰《伤寒论》67 条苓桂术甘 + 357 条麻黄升麻 跨库实案谱 (70 篇医案逐篇展开:67 条 34 篇 + 357 条 36 篇,含主诉/方剂/病机/张驰对应/学习路径).
+14. `references/sheng_jiang_san_variants.md` for 升降散变法·医案·处方汇编 (29种变法速查,与 stagnant_heat_yure.md 病机专题对偶,聚焦"具体怎么改方").
+15. `references/broad_typhoid_nine_grid.md` for 广义伤寒分类·视角3·寒温一统九宫格 (表/半表半里/里 × 寒/热/湿 = 9 格 + 9 类跨格专题,456 篇统计).
+16. `references/broad_typhoid_five_categories.md` for 广义伤寒分类·视角1·《难经》五分类 (中风/伤寒/湿温/热病/温病,各病证经典方剂+40篇医案+卫气营血/三焦对接).
+17. `references/broad_typhoid_six_channels.md` for 广义伤寒分类·视角2·六经传变轴 (太阳→阳明→少阳→太阴→少阴→厥阴,7类传变路径+合病并病处理原则,40+篇医案).
+18. `references/broad_typhoid_overview.md` for 广义伤寒分类·全景索引 (三视角交叉对照+15个跨视角锚点医案+临床三步实战模板;64% 医案需三视角联合定位).
+19. `references/broad_typhoid_reading_guide.md` for 广义伤寒·六经分卷阅读指南 (六卷+三附卷,429 篇医案按经层组织,新手/进阶/临床三档阅读路径).
+20. `references/course_package.json` for normalized package objects when structured lookup is needed.
+21. `references/full_transcript.md` for original wording when detailed citation is required.
 
 ## Topic-Bank Distillation Workflow (Erik's preferred pattern)
 
@@ -330,7 +334,7 @@ When you create a new `references/<topic>.md` file, you MUST update **three plac
 
 **Pitfall — never reformat an existing Reference Priority entry into the Pre-built Knowledge Banks style** (e.g. swapping `4. \`file\` for description.` to `- \`file\` — description.`): it breaks the numbering invariant, leaves the entry position ambiguous, and creates a row that doesn't match the surrounding style. Reference Priority uses numbered prose (`4. \`path\` for x.`), Pre-built uses dash bullets (`- \`path\` — x.`). Mixing the two is a bug — observed 2026-07-22 when adding `yuxue_fangji_comparison.md` and the patch accidentally replaced entry #4 with the dash style, requiring a follow-up patch to restore the numbered form.
 
-**Pre-flight checklist before writing a new `references/<file>.md`** (run all 4 in one batch, in this order):
+**Pre-flight checklist before writing a new `references/<file>.md`** (run all 4 in one batch, in order):
   1. `grep -n "<file_basename>" SKILL.md` — see if file already exists
   2. Read SKILL.md lines 17-37 (Trigger Vocabulary table) and lines 59-77 (Reference Priority)
   3. Add to Trigger Vocabulary first (top, no renumbering needed)
@@ -338,7 +342,46 @@ When you create a new `references/<topic>.md` file, you MUST update **three plac
   5. Add to Pre-built Knowledge Banks at the END of that section (after jianzhong_tang, before broad_typhoid_nine_grid is the current convention)
   6. Run final verification: `grep -n "<file_basename>" SKILL.md` — expect exactly **3 hits** (one per location). If fewer, you're missing a section. If more, you duplicated somewhere.
 
-**Why this is mandatory**: the three locations serve different lookup patterns — Erik's quick-load keywords hit Trigger Vocabulary; depth of detail lookup hits Reference Priority; scanning the available toolkit hits Pre-built Knowledge Banks. Missing any one means a future session can't find the file through that path, and Erik will notice and complain.
+**Pitfall — Pre-built Knowledge Banks has no numbering, so duplicates are silent**: unlike Reference Priority (numbered list, where `grep -E "^[0-9]+\. \`references/" | sort -u` catches dupes), Pre-built is a bulleted list (`- \`references/...\` — ...`). Two historical duplicates (`stagnant_heat_yure.md` and `sheng_jiang_san_variants.md` both listed twice) survived for weeks because nothing enforced uniqueness. **Mandatory fix when adding a file**:
+  1. `grep -oE '\`references/[^`]+\.md\`' SKILL.md | sort | uniq -d` — print any filename that appears 2+ times across the whole SKILL.md (covers all 3 sections)
+  2. If any are returned, they are duplicates — delete the redundant `- \`references/...\` line, keeping the FIRST occurrence
+  3. This must run BEFORE the final verification at step 6
+
+**Pitfall — sed renumbering with placeholder prefix is fragile** (observed 2026-07-24): when reflowing Reference Priority numbers with `sed -i 's/^N\. /__NUM__N. /' && sed -i 's/^__NUM__M\. /newN. /'`, calling the renumber sed multiple times (one per number to remap) leaves `__NUM__` artifacts in some lines if the placeholder line was not in the affected range. **Fix**: do the whole renumbering block in ONE sed expression with multiple `-e` clauses, OR use Python with explicit string replace (which the existing 2026-07-13 pitfall recommends for big files anyway):
+  ```python
+  import re
+  with open('SKILL.md', 'r') as f: content = f.read()
+  matches = list(re.finditer(r'^(\d+)\. (`references/[^`]+`)', content, re.MULTILINE))
+  for i, m in enumerate(matches, 1):
+      content = content.replace(m.group(0), f"{i}. {m.group(2)}", 1)
+  with open('SKILL.md', 'w') as f: f.write(content)
+  ```
+  Then verify: `grep -cE "^__NUM__" SKILL.md` should return 0.
+
+**Mandatory post-patch verification** (must run, not optional):
+```bash
+# 1. All 3 sections present, no duplicates
+grep -n "<file_basename>" SKILL.md | wc -l   # expect 3
+grep -oE '\`references/[^`]+\.md\`' SKILL.md | sort | uniq -d  # expect empty
+
+# 2. Reference Priority is strictly 1..N
+grep -E "^[0-9]+\. \`references/" SKILL.md | wc -l
+grep -oE "^[0-9]+\." SKILL.md | grep -E "^[0-9]+\.$" | sort -un | tr '\n' ' '
+# Last command should print 1. 2. 3. ... N. with no gaps and no duplicates
+
+# 3. No sed placeholder artifacts left
+grep -cE "^__NUM__" SKILL.md   # expect 0
+
+# 4. Trigger Vocabulary + Pre-built counts match Reference Priority count
+echo "Trigger: $(awk '/^\| 「/ {n++} END {print n}' SKILL.md)"
+echo "Priority: $(grep -cE '^[0-9]+\. `references/' SKILL.md)"
+echo "Pre-built: $(awk '/^- `references/ {n++} END {print n}' SKILL.md)"
+# These three numbers should be EQUAL (Reference Priority may be 1-2 higher if it
+# also includes course_digest/lesson_index/concept_glossary + course_package.json/full_transcript.md
+# which are not topic files; the topic-file intersection should match).
+```
+
+**Why this is mandatory**: the three locations serve different lookup patterns — Erik's quick-load keywords hit Trigger Vocabulary; depth of detail lookup hits Reference Priority; scanning the available toolkit hits Pre-built Knowledge Banks. Missing any one means a future session can't find the file through that path, and Erik will notice and complain. Drift in any of the three (missing entry, duplicate entry, wrong number) creates exactly the same downstream failure mode: future agents can't find the file.
 
 ### Step 6 — Offer to push to GitHub (Erik's preferred closing)
 Erik's standard closing is 「保存 + 推送到 GitHub」 as a two-step flow. After writing the new references file and updating SKILL.md, ask the user if they want to push to the public mirror. If yes:
@@ -449,12 +492,12 @@ For more detail, grep `references/full_transcript.md` with context lines to extr
 
 ### Pre-built Knowledge Banks
 - `references/blood_stasis_formulas.md` — Complete 瘀血/淤血 formula-case mapping with diagnostic signs and pairing patterns.
-- `references/stagnant_heat_yure.md` — 郁热/火郁/宣透郁热法 mapping (赵绍琴理法, 升降散+栀子豉汤+三仁汤 architecture).
 - `references/gardenia_fermented_soybean_formula.md` — 栀子豉汤 formula-case mapping (含"表里双解体系"重新定义).
 - `references/sanren_tang_formula.md` — 三仁汤 formula-case mapping (分消三焦湿热、宣上畅中渗下架构、8大合方体系、三禁要旨).
+- `references/zhangchi_misuse_hanfa_xref.md` — 张驰《伤寒论》「误用汗法/火逆/坏病」专题 × 医林独啸斋医案 跨库对照 (76 条九阶段条文 + 25 条命中映射 + 139 篇医案 + 6 篇必读锚点 + 误火专题实战 6 篇).
+- `references/zhangchi_67_357_cases_spectrum.md` — 张驰《伤寒论》67 条苓桂术甘 + 357 条麻黄升麻 跨库实案谱 (70 篇医案逐篇展开,主诉/方剂/病机/张驰对应/4 阶学习路径).
 - `references/damp_heat_three_formulas.md` — 湿热病机专题 (三仁汤 vs 甘露消毒丹 vs 藿朴夏苓汤三方对比, 含舌象决策图、临床路径、医案索引).
 - `references/cold_damp_vs_damp_heat.md` — 寒湿 vs 湿热 鉴别专题 (按部位分论寒湿、湿热假寒三大陷阱、5步速判法、病机转化).
-- `references/sheng_jiang_san_variants.md` — 升降散变法·医案·处方汇编 (29种变法:原方/郁金代姜黄/蚕砂代大黄/合方升级,含18篇必读文章索引).
 - `references/jianzhong_tang_formula.md` — 小建中汤变法体系(8大类:黄芪/当归/归芪/合过敏煎/合龙骨牡蛎/桂枝加芍药/大建中/《千金》建中类方,中医世家 225 卡片 + 医林独啸斋 61 篇,含6朝代注解+10个实战医案索引).
 - `references/yuxue_fangji_comparison.md` — 11 大祛瘀方剂并列对比手册(王清任逐瘀五方 + 经方 4 首 + 时方 2 首,含 14 节 + 5 步决策树 + 实战医案,33.5 KB / 908 行).
 - `references/broad_typhoid_nine_grid.md` — 广义伤寒分类·寒温一统九宫格(视角3,含35+篇核心医案,医林独啸斋456篇统计).
