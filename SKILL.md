@@ -36,7 +36,8 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 | 「祛瘀方对比」 / 「逐瘀方对比」 / 「王清任逐瘀五方」 | `references/yuxue_fangji_comparison.md` | 11 大祛瘀方剂并列对比(王清任 5 方 + 经方 4 首 + 时方 2 首,含 5 步决策树 + 实战医案) |
 | 「眼睛红」 / 「红眼病」 / 「目赤」 / 「眼充血」 / 「眼睛肿痛」 / 「红眼」 | `references/eye_red_eye_disease.md` | 眼红三分法:肝胆郁热/水毒侵犯/燥热瘀血(辛凉法+明朗饮+葛根芩连加味) |
 | 「带状疱疹」 / 「蛇盘疮」 / 「缠腰火丹」 / 「过腰蛇」 / 「带疱后遗神经痛」 / 「升麻鳖甲汤治带疱」 | `references/shingles_herpes_zoster.md` | 带疱专病专方:瓜蒌红花汤+升麻鳖甲汤+真武汤三方合用体系,含早治窗口期提醒 |
-| 「这个方子」 / 「方子构成」 / 任意药物列表 | → run Reverse-Lookup Workflow (below) | 拆方 → 锁定核心方 → 调专题 |
+| 「口燥不渴」 / 「口干不欲饮」 / 「渴不欲饮」 / 「但欲漱水不欲咽」 / 「嗽水不欲咽」 / 「唇口干燥」 | `references/mouth_dry_not_thirsty.md` | 「口燥不渴」专题:5 大病机(瘀血/水湿/肺气不宣/少阴阳虚/虚劳津亏)+4 处仲景原文+7 个锚点医案,关键鉴别是真渴 vs 假渴 |
+| 「这个方子」 / 「方子构成」 / 「拆解这个方子」 / 「这个方是什么思路」 / 任意药物列表 | → run **Sub-Workflow: 方剂拆解分析** (below) | 拆方 → 锁定核心方 → 推主治证机(不调专题,只输出报告) |
 | 「帮我看看这个病例」 / 任意症状描述 | → run Reverse-Lookup Workflow | 拆证 → 锁定病机 → 调专题 |
 
 **Pitfall**: Don't say "让我先查一下" before loading. Load the file first, then read the relevant sections. Erik has zero tolerance for "I'll just describe it from memory" — he wants the original phrasing with line numbers.
@@ -61,26 +62,27 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 1. `references/course_digest.md` for the course-level framework.
 2. `references/lesson_index.json` for lesson lookup and sequencing.
 3. `references/concept_glossary.md` for terms and definitions.
-4. `references/blood_stasis_formulas.md` for 瘀血/淤血 formula-case mapping (10 formulas, 69 articles).
-5. `references/yuxue_fangji_comparison.md` for 11 大祛瘀方剂并列对比手册(王清任逐瘀五方 + 经方 4 首 + 时方 2 首,5 步决策树 + 实战医案,33.5 KB).
-6. `references/stagnant_heat_yure.md` for 郁热/火郁/宣透郁热法 mapping (146 articles, 赵绍琴理法).
-7. `references/gardenia_fermented_soybean_formula.md` for 栀子豉汤 formula-case mapping (18 articles, 重新定义为「表里双解体系」).
-8. `references/jianzhong_tang_formula.md` for 小建中汤变法体系(8大类:黄芪建中/当归建中/归芪建中/合过敏煎/合龙骨牡蛎/桂枝加芍药/大建中/《千金》建中类方),中医世家 225 张卡片 + 医林独啸斋 61 篇文章 + 6 朝代注解.
-9. `references/damp_heat_three_formulas.md` for 湿热病机专题 (三仁汤 vs 甘露消毒丹 vs 藿朴夏苓汤三方对比, 含舌象决策图与临床路径).
-10. `references/cold_damp_vs_damp_heat.md` for 寒湿 vs 湿热 鉴别专题 (按部位分论寒湿、湿热假寒三大陷阱、5步速判法、病机转化).
-11. `references/sanren_tang_formula.md` for 三仁汤 formula-case mapping (分消湿热、宣上畅中渗下、合方体系、三禁, 231处文献).
-12. `references/zhangchi_misuse_hanfa_xref.md` for 张驰老师《伤寒论》「误用汗法/火逆/坏病」专题 × 医林独啸斋医案 跨库对照手册 (76 条误治条文按九阶段组织,25 条命中,139 篇医案映射,6 篇必读锚点).
-13. `references/zhangchi_67_357_cases_spectrum.md` for 张驰《伤寒论》67 条苓桂术甘 + 357 条麻黄升麻 跨库实案谱 (70 篇医案逐篇展开:67 条 34 篇 + 357 条 36 篇,含主诉/方剂/病机/张驰对应/学习路径).
-14. `references/sheng_jiang_san_variants.md` for 升降散变法·医案·处方汇编 (29种变法速查,与 stagnant_heat_yure.md 病机专题对偶,聚焦"具体怎么改方").
-15. `references/broad_typhoid_nine_grid.md` for 广义伤寒分类·视角3·寒温一统九宫格 (表/半表半里/里 × 寒/热/湿 = 9 格 + 9 类跨格专题,456 篇统计).
-16. `references/broad_typhoid_five_categories.md` for 广义伤寒分类·视角1·《难经》五分类 (中风/伤寒/湿温/热病/温病,各病证经典方剂+40篇医案+卫气营血/三焦对接).
-17. `references/broad_typhoid_six_channels.md` for 广义伤寒分类·视角2·六经传变轴 (太阳→阳明→少阳→太阴→少阴→厥阴,7类传变路径+合病并病处理原则,40+篇医案).
-18. `references/broad_typhoid_overview.md` for 广义伤寒分类·全景索引 (三视角交叉对照+15个跨视角锚点医案+临床三步实战模板;64% 医案需三视角联合定位).
-19. `references/broad_typhoid_reading_guide.md` for 广义伤寒·六经分卷阅读指南 (六卷+三附卷,429 篇医案按经层组织,新手/进阶/临床三档阅读路径).
-20. `references/course_package.json` for normalized package objects when structured lookup is needed.
-21. `references/full_transcript.md` for original wording when detailed citation is required.
-22. `references/eye_red_eye_disease.md` for 眼红专题 (病机三分法:肝胆郁热/水毒侵犯/燥热瘀血;辛凉法+明朗饮+葛根芩连加味三大证型方剂;含化学品灼伤案、师姐投稿红眼病5例;原 297-613 行跨篇).
-23. `references/shingles_herpes_zoster.md` for 带状疱疹专题 (辨证论治+专病专方双线:瓜蒌红花汤+升麻鳖甲汤+真武汤三大支柱;含突发/老人/后遗痛/大面积内外合治4篇核心医案;含排邪反应识别+5 大误治陷阱).
+4. `references/mouth_dry_not_thirsty.md` for 「口燥不渴/口干不欲饮」专题 — 5 大病机(瘀血/水湿/肺气不宣/少阴阳虚/虚劳津亏)+4 处仲景原文+7 个锚点医案,与 blood_stasis_formulas.md 瘀血方剂总论对偶.
+5. `references/blood_stasis_formulas.md` for 瘀血/淤血 formula-case mapping (10 formulas, 69 articles).
+6. `references/yuxue_fangji_comparison.md` for 11 大祛瘀方剂并列对比手册(王清任逐瘀五方 + 经方 4 首 + 时方 2 首,5 步决策树 + 实战医案,33.5 KB).
+7. `references/stagnant_heat_yure.md` for 郁热/火郁/宣透郁热法 mapping (146 articles, 赵绍琴理法).
+8. `references/gardenia_fermented_soybean_formula.md` for 栀子豉汤 formula-case mapping (18 articles, 重新定义为「表里双解体系」).
+9. `references/jianzhong_tang_formula.md` for 小建中汤变法体系(8大类:黄芪建中/当归建中/归芪建中/合过敏煎/合龙骨牡蛎/桂枝加芍药/大建中/《千金》建中类方),中医世家 225 张卡片 + 医林独啸斋 61 篇文章 + 6 朝代注解.
+10. `references/damp_heat_three_formulas.md` for 湿热病机专题 (三仁汤 vs 甘露消毒丹 vs 藿朴夏苓汤三方对比, 含舌象决策图与临床路径).
+11. `references/cold_damp_vs_damp_heat.md` for 寒湿 vs 湿热 鉴别专题 (按部位分论寒湿、湿热假寒三大陷阱、5步速判法、病机转化).
+12. `references/sanren_tang_formula.md` for 三仁汤 formula-case mapping (分消湿热、宣上畅中渗下、合方体系、三禁, 231处文献).
+13. `references/zhangchi_misuse_hanfa_xref.md` for 张驰老师《伤寒论》「误用汗法/火逆/坏病」专题 × 医林独啸斋医案 跨库对照手册 (76 条误治条文按九阶段组织,25 条命中,139 篇医案映射,6 篇必读锚点).
+14. `references/zhangchi_67_357_cases_spectrum.md` for 张驰《伤寒论》67 条苓桂术甘 + 357 条麻黄升麻 跨库实案谱 (70 篇医案逐篇展开:67 条 34 篇 + 357 条 36 篇,含主诉/方剂/病机/张驰对应/学习路径).
+15. `references/sheng_jiang_san_variants.md` for 升降散变法·医案·处方汇编 (29种变法速查,与 stagnant_heat_yure.md 病机专题对偶,聚焦"具体怎么改方").
+16. `references/broad_typhoid_nine_grid.md` for 广义伤寒分类·视角3·寒温一统九宫格 (表/半表半里/里 × 寒/热/湿 = 9 格 + 9 类跨格专题,456 篇统计).
+17. `references/broad_typhoid_five_categories.md` for 广义伤寒分类·视角1·《难经》五分类 (中风/伤寒/湿温/热病/温病,各病证经典方剂+40篇医案+卫气营血/三焦对接).
+18. `references/broad_typhoid_six_channels.md` for 广义伤寒分类·视角2·六经传变轴 (太阳→阳明→少阳→太阴→少阴→厥阴,7类传变路径+合病并病处理原则,40+篇医案).
+19. `references/broad_typhoid_overview.md` for 广义伤寒分类·全景索引 (三视角交叉对照+15个跨视角锚点医案+临床三步实战模板;64% 医案需三视角联合定位).
+20. `references/broad_typhoid_reading_guide.md` for 广义伤寒·六经分卷阅读指南 (六卷+三附卷,429 篇医案按经层组织,新手/进阶/临床三档阅读路径).
+21. `references/course_package.json` for normalized package objects when structured lookup is needed.
+22. `references/full_transcript.md` for original wording when detailed citation is required.
+23. `references/eye_red_eye_disease.md` for 眼红专题 (病机三分法:肝胆郁热/水毒侵犯/燥热瘀血;辛凉法+明朗饮+葛根芩连加味三大证型方剂;含化学品灼伤案、师姐投稿红眼病5例;原 297-613 行跨篇).
+24. `references/shingles_herpes_zoster.md` for 带状疱疹专题 (辨证论治+专病专方双线:瓜蒌红花汤+升麻鳖甲汤+真武汤三大支柱;含突发/老人/后遗痛/大面积内外合治4篇核心医案;含排邪反应识别+5 大误治陷阱).
 
 ## Topic-Bank Distillation Workflow (Erik's preferred pattern)
 
@@ -469,8 +471,14 @@ Always include a **回归到原方** (regression back to the user's original pre
 Erik 经常贴出一个完整的处方,要求识别里面的经典方骨架并反推主治证机。这是「症状→专题」Reverse-Lookup 的姐妹工作流,但**输入是方剂、输出是拆方+证机推论**,而非新专题。
 
 **触发场景**:
-- 用户贴出一个完整的 N 味方子(剂量列表),说「这个是由什么方剂组成」「拆解一下」「方子构成」
+- 用户贴出一个完整的 N 味方子(剂量列表),说「这个是由什么方剂组成」「拆解一下」「方子构成」「这个方是什么思路」
 - 不带具体患者信息,纯粹是方剂层面的拆解请求
+
+**与 Reverse-Lookup 的关键区别**(Erik 在 2026-07-10 明确划清):
+- **Reverse-Lookup**:输入是症状/病例 → 拆证 → 锁定病机 → **调已有专题文件**(`references/<topic>.md`)→ 如有 ≥3 篇医案可蒸馏新专题
+- **方剂拆解**:输入是方剂列表 → 拆方 → 锁定核心方 → **直接输出拆方报告** → 不一定调专题,只有当某方在医林独啸斋有 ≥3 篇独立医案才考虑蒸馏成新专题(见 Step 9)
+
+**保存形式选择**(Erik 在 2026-07-10 明确纠正过):工作流/方法论本身**优先合并进 SKILL.md 作为 Sub-Workflow 节**,**不要**单独创建 `references/fang_jie_workflow.md` 之类的过程性文件。理由:① Sub-Workflow 是 agent 启动时就读的内容,放 SKILL.md 立刻可用;② 单独文件容易与 SKILL.md 不同步,造成「真相散落」;③ 拆方工作流与「方子拆解」触发词直接挂钩,放在 SKILL.md 触发词表的下一节最自然。**例外**:如果拆方过程中沉淀出独立的方剂专题(比如 `eye_red_eye_disease.md`、`shingles_herpes_zoster.md` 那种),这些是**内容文件**而非过程文件,该放 `references/` 没问题。
 
 **何时不必走完整 8 步**:
 - 用户只给了 1-3 味药 → 直接 Step 1 + Step 5,推论可能适应症即可
@@ -659,6 +667,10 @@ rg -l "核心方名" /Users/applemima1111/AiCoding/医林独啸斋/markdown/
 - 同步更新 SKILL.md 三处:Trigger Vocabulary + Reference Priority + Pre-built Knowledge Banks
 - 推 GitHub 公开镜像
 
+**保存形式选择 — 工作流方法论 vs 内容文件**(Erik 2026-07-10 明确):
+- **方法论/工作流本身**(如「方剂拆解分析」9 步法)→ **合并进 SKILL.md 作为 Sub-Workflow 节**,不要单独建 `references/<workflow>.md`。理由:① Sub-Workflow 是 agent 启动时立即可用的索引;② 单独文件与 SKILL.md 容易不同步;③ 与「方子拆解」触发词直接挂钩,放 SKILL.md 最自然
+- **内容文件**(如某方剂专题)→ 放 `references/<topic>.md`,遵循正常的三处同步流程
+
 ---
 
 #### 输出格式规范
@@ -691,8 +703,10 @@ Erik 偏好:**纯文本 + ASCII 结构 + 引证带 line number**。
 1. **结构优于记忆**:即使你熟悉这个方,也要先看骨架、不要凭印象答
 2. **逐药回溯 > 整方概括**:Erik 喜欢逐味解释,而非「这是某某方」一句话
 3. **偏离解读是核心价值**:为什么不用白术用苍术?为什么去姜枣?——这是教学点
-4. **永远问主诉**:病机推论是开放解,主诉才能定位到具体场景
+4. **永远问主诉**(Erik 硬性偏好):每个拆方报告结尾必须问「有具体主诉吗?可以精修推论,也能帮你反查用药是否需要加减」。病机推论是开放解,主诉才能定位到具体场景——这是把通用分析变成临床决策的关键追问
 5. **引证带 line number**:每条引文后标注原文行号,便于交叉核对
+6. **方法论合并进 SKILL.md,内容文件放 references/**(Erik 2026-07-10 偏好):拆方工作流本身是 agent 启动即用的索引,合并到 SKILL.md 的 Sub-Workflow 节;只有当某方剂在医林独啸斋有 ≥3 篇独立医案、需要长篇内容承载时,才蒸馏成 references/<topic>.md。**不要**为「拆方流程」单独建 `references/fang_jie_workflow.md` 之类的过程性文件
+7. **Trigger 词与 Sub-Workflow 必须一一对应**:Trigger Vocabulary 表里的「拆方/方子构成」等触发词必须指向 Sub-Workflow(本节),不要指向 Reverse-Lookup。Erik 在 2026-07-10 明确把两者划清:方剂输入 → Sub-Workflow,症状输入 → Reverse-Lookup
 
 ### Response style (terminal-friendly)
 The user prefers 纯文本 with light ASCII structure for reading in CLI. Use:
@@ -739,6 +753,7 @@ For more detail, grep `references/full_transcript.md` with context lines to extr
 - `references/broad_typhoid_reading_guide.md` — 广义伤寒·六经分卷阅读指南(六卷+三附卷,429篇医案按经层组织,新手/进阶/临床三档阅读路径).
 - `references/eye_red_eye_disease.md` — 眼红专题(病机三分法:肝胆郁热/水毒侵犯/燥热瘀血;辛凉法+明朗饮+葛根芩连加味三大证型方剂;含化学品灼伤案、师姐投稿红眼病5例).
 - `references/shingles_herpes_zoster.md` — 带状疱疹专题(辨证论治+专病专方双线:瓜蒌红花汤+升麻鳖甲汤+真武汤三大支柱;4篇核心医案对照+排邪反应识别+5大误治陷阱).
+- `references/mouth_dry_not_thirsty.md` — 「口燥不渴/口干不欲饮」专题(5 大病机:瘀血/水湿/肺气不宣/少阴阳虚/虚劳津亏;4 处仲景原文 + 7 个锚点医案;含五型对比速查表 + 临床决策流程图;与 blood_stasis_formulas.md 瘀血方剂总论对偶).
 
 **广义伤寒五视角系列约定:** 五个文件互为对偶,共享触发词表与一句话心法结构。视角1=经典理论(《难经》),视角2=传变轴(《伤寒论》),视角3=寒温一统(临床综合),全景索引=跨视角交叉,分卷阅读指南=实战阅读路径。Erik 的标准交付顺序是 **3 → 1 → 2 → 全景索引 → 分卷阅读指南** (empirical-first)。完整方法论见 SKILL.md "Step 4d — Multi-Perspective Classification Workflow" 和 "Step 4e — Reading Guide by Framework"。
 
@@ -758,6 +773,7 @@ When Erik asks you to write a README for a new public mirror (e.g. "我们需要
 ### Rebuilding the Course
 - `references/conversion_workflow.md` — How to rebuild from source markdown (lineage-skill setup, custom converter, pitfalls).
 - `references/session_log_2026_07_13_broad_typhoid.md` — Session log documenting the 2026-07-13 广义伤寒分类 5-file series + strict 分层 reading guide + the tool pitfall that surfaced (execute_code append-loop silent truncation, fixed via `write_file` + `python3 -u`). Use this to reproduce or extend this series in a future session.
+- `references/session_log_2026_07_10_fang_jie.md` — Session log documenting the 2026-07-10 方剂拆解工作流(Sub-Workflow) + 3 个真实拆方实例 + GitHub push commit `4906628`. Includes Erik's two key纠错(独立文件 vs 合并到 SKILL.md、Trigger 词与工作流对应)and the session's full set of artifacts. Use to reproduce or extend the拆方工作流.
 
 ## Response Rules
 
