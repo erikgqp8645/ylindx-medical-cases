@@ -83,6 +83,7 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 22. `references/full_transcript.md` for original wording when detailed citation is required.
 23. `references/eye_red_eye_disease.md` for 眼红专题 (病机三分法:肝胆郁热/水毒侵犯/燥热瘀血;辛凉法+明朗饮+葛根芩连加味三大证型方剂;含化学品灼伤案、师姐投稿红眼病5例;原 297-613 行跨篇).
 24. `references/shingles_herpes_zoster.md` for 带状疱疹专题 (辨证论治+专病专方双线:瓜蒌红花汤+升麻鳖甲汤+真武汤三大支柱;含突发/老人/后遗痛/大面积内外合治4篇核心医案;含排邪反应识别+5 大误治陷阱).
+25. `references/course_distillation.json` for 全部 456 lessons 结构化摘要(2026-08-04 同步自远端;head/case_index/lesson_summaries/diagnosis 字段;1.1MB,适合机器可读的全集操作).
 
 ## Topic-Bank Distillation Workflow (Erik's preferred pattern)
 
@@ -92,6 +93,19 @@ When the user asks about a TCM concept, formula, or disease mechanism (e.g. "郁
 Use `rg -l "<keyword>"` against `/Users/applemima1111/AiCoding/医林独啸斋/markdown/` to count and list relevant articles. Common search terms:
 - For formula: the Chinese formula name, then common variant spellings
 - For disease mechanism: 病机名 + 常见同义词 (e.g. 郁热|火郁|郁火|气郁化热)
+
+**Pitfall — Symptom-focused grep needs near-synonym clusters** (observed 2026-07-27 in `mouth_dry_not_thirsty.md`): When grep-ing for a classical symptom (e.g. 「口燥不渴」), the **exact canonical phrase often hits 0 articles** in口语转写稿. The articles use near-synonyms. Always grep a cluster:
+
+| Canonical phrase (仲景原文) | Near-synonym cluster for口语转写 |
+|---|---|
+| 「口燥不渴」| 「口燥」 / 「不渴」 / 「口干不欲饮」 / 「渴不欲饮」 / 「但欲嗽水不欲咽」 / 「唇口干燥」 |
+| 「心下痞」| 「心下痞」 / 「胃脘堵闷」 / 「胃胀」 |
+| 「但欲寐」| 「但欲寐」 / 「嗜睡」 / 「想睡觉」 |
+| 「小便不利」| 「小便不利」 / 「小便难」 / 「尿少」 / 「癃闭」 |
+
+Report the hit counts in a small table in the topic bank itself (e.g. mouth_dry_not_thirsty.md section 一) so Erik can see "精确 0 篇 vs 不渴 57 篇" and understand why the bank covers 7+ articles even when the canonical phrase matches none.
+
+**Tool choice**: `grep -rln <kw>` (BSD grep on macOS, default in this env) works fine for corpus scans. `rg` is faster but not always installed; both produce the same `-l` (files-only) output for our use case. Use `grep -rln` as the default; switch to `rg -l` only when scanning >1000 files (then -l flag still works as expected).
 
 ### Step 2 — Read the system-level articles first
 Filter `basename` to find articles with "专题", "经验总结", "粗述", or "解析" in the title — these are tsp南极's systematic expositions, not single-case stories. Read those fully.
@@ -130,6 +144,39 @@ Write to `references/<topic>.md` following the `blood_stasis_formulas.md` templa
 - Every quote from full_transcript.md must include the line number in parentheses, e.g. `(line 42893)`
 - Use direct quotes (>) for 南极师's exact wording; use 「引号」 for paraphrased concepts
 - Mark "推理/综合" vs "原文" clearly when blending course material with synthesis
+
+### Step 4f — Symptom-Focused Topic Bank (症状专题模式) ★新增 2026-07-27
+
+Observed in `references/mouth_dry_not_thirsty.md`: when Erik asks about **a specific symptom pattern** (e.g. 「口燥不渴」/「渴不欲饮」/「唇口干燥」), the topic bank isn't organized by formula, mechanism, or comparison — it's organized by **clinical symptom leading to differential disease-mechanism classification**.
+
+**Trigger**: Erik asks about a single symptom (口干/不渴/但欲嗽水不欲咽/心下痞/但欲寐/手足烦热/小便不利 etc.) without naming a formula or disease mechanism explicitly.
+
+**File archetype differences vs Steps 4 / 4b / 4c / 4d**:
+
+| Archetype | File pattern | Trigger example |
+|---|---|---|
+| 4a Formula formula-case mapping | `<topic>_formula.md` | 「三仁汤」/「栀子豉」 |
+| 4b Comparison | `<topic>_three_formulas.md` or `<topic>_comparison.md` | 「湿热三方」 |
+| 4b Differentiation | `<X>_vs_<Y>.md` | 「寒湿 vs 湿热」 |
+| 4c 病机 vs 变法 split | `<topic>_yure.md` + `<topic>_variants.md` | 「升降散」|
+| 4d Multi-perspective | `broad_<topic>_<perspective>.md` | 「广义伤寒」|
+| **4f Symptom-focused (新增)** | **`<symptom>_<modifier>.md`** (e.g. `mouth_dry_not_thirsty.md`) | **「口燥不渴」** |
+
+**Mandatory structure for symptom-focused topic banks**:
+1. **症状识别 (Symptom Identification)** — list all canonical expressions + corpus hit counts per near-synonym variant (e.g. 「口燥」/「不渴」/「口干不欲饮」/「渴不欲饮」/「但欲嗽水不欲咽」)
+2. **仲景原文 (Canonical Texts)** — verbatim 《金匮》/《伤寒》/《温病条辨》 passages with line numbers, distinguishing 经典瘀血条 / 温经汤条 / 渴-不渴鉴别条 etc.
+3. **病机分类 (Mechanism Classification)** — 3-7 mutually-exclusive 病机 buckets (e.g. mouth_dry_not_thirsty has 5: 瘀血/水湿/肺气不宣/少阴阳虚/虚劳津亏)
+4. **对比速查表 (Master Comparison Table)** — all 病机 buckets side-by-side: 渴/不渴 / 舌象 / 脉象 / 兼证 / 主方 / 病机本质
+5. **临床决策流程图 (Clinical Decision Tree)** — ASCII tree from 症状 → 病机 → 方剂
+6. **实战医案索引 (Anchor Cases)** — 5-8 articles with verbatim 主诉 + 处方 + 行号
+7. **关键禁忌 (Pitfalls)** — what NOT to do for each 病机 (e.g. 「不可见口燥即养阴」「不可见不渴即利水」)
+8. **辨证速查 (Symptom → Mechanism → Prescription)** — quick lookup table
+9. **与其他专题交叉链接** — link to existing files (e.g. mouth_dry → blood_stasis_formulas.md / damp_heat / cold_damp_vs_damp_heat / sanren_tang / jianzhong_tang)
+10. **一句话核心心法** — the closing one-liner
+
+**Distinguishing rule**: Step 4a's formula mapping is organized by *方* (e.g. 温经汤 → 何证何方), Step 4f symptom mapping is organized by *症* (e.g. 口干不欲饮 → 何证何方). The same article may appear in BOTH — symptom bank covers ALL 病机 that produce the symptom; formula bank covers ALL 症状 that the formula treats.
+
+**Naming convention**: `<symptom_pinyin>_<modifier_pinyin>.md` (e.g. `mouth_dry_not_thirsty.md`, NOT `kouzao_buoke.md`). Use pinyin-Underscore for the file name to keep it portable; the FIRST heading inside the file should be the Chinese title in 「」 brackets.
 
 ### Step 4 — Cross-link related banks
 If two topic banks share articles (e.g. 栀子豉汤 appears in 郁热 cases), link them with explicit "详见 references/..." pointers so future agents can navigate.
@@ -388,7 +435,9 @@ echo "Pre-built: $(awk '/^- `references/ {n++} END {print n}' SKILL.md)"
 **Why this is mandatory**: the three locations serve different lookup patterns — Erik's quick-load keywords hit Trigger Vocabulary; depth of detail lookup hits Reference Priority; scanning the available toolkit hits Pre-built Knowledge Banks. Missing any one means a future session can't find the file through that path, and Erik will notice and complain. Drift in any of the three (missing entry, duplicate entry, wrong number) creates exactly the same downstream failure mode: future agents can't find the file.
 
 ### Step 6 — Offer to push to GitHub (Erik's preferred closing)
-Erik's standard closing is 「保存 + 推送到 GitHub」 as a two-step flow. After writing the new references file and updating SKILL.md, ask the user if they want to push to the public mirror. If yes:
+Erik's standard closing is 「保存 + 推送到 GitHub」 as a two-step flow. After writing the new references file and updating SKILL.md, ask the user if they want to push to the public mirror.
+
+**Two-step reply pattern** (observed 2026-07-27): Erik often replies "需要,然后推送" or similar — meaning **both steps back-to-back**. Don't pause after distillation to wait for him to confirm push; just chain them: Step 1 (write file + update SKILL.md), Step 2 (git clone + copy + commit + push + curl-verify + cleanup) in one continuous flow. The "offer to push" should be at the END of the distillation report (after the topic bank content is shown), so Erik's "需要,然后推送" reply triggers both Step 5 sync + Step 6 push immediately in the same turn. If yes:
 
 - **Target repo**: `https://github.com/erikgqp8645/ylindx-medical-cases` (default branch = `master` — note: NOT `main`)
 - **Local source**: `~/.hermes/skills/yilin-mentor-lineage/` (the live skill directory)
@@ -406,8 +455,15 @@ Erik's standard closing is 「保存 + 推送到 GitHub」 as a two-step flow. A
   3. `gh api repos/<owner>/<repo> --include` — uses gh auth. If this works → repo exists, you have access. If still 404 → truly doesn't exist
   4. **Ask Erik**: "我看到仓库返回 404,可能是私有仓库。你有改 public 吗?或者需要提供 token?" — never assume, always confirm
 - **Pitfall**: `gh` CLI may NOT be installed (`gh: command not found`). Do NOT auto-install with `brew install gh` without asking Erik first — he may have a preferred installation method or may want to provide a PAT directly. Present the choice and let him decide.
+- **Pitfall — `gh repo clone` HTTP2 framing failure** (observed 2026-07-27): `gh repo clone erikgqp8645/ylindx-medical-cases /tmp/ylindx-push -- --branch master` may fail with `RPC failed; curl 16 Error in the HTTP2 framing layer / fatal: expected 'packfile'`. **Fallback**: skip `gh` and use plain `git clone https://github.com/erikgqp8645/ylindx-medical-cases.git /tmp/ylindx-push` — same result, no gh binary needed for clone. The gh CLI is still preferred for `gh api`/`gh repo sync` calls later.
+- **Pitfall — REMOTE IS A SIMPLIFIED VERSION** (observed 2026-07-27, the most important push-related lesson from this session): the GitHub `ylindx-medical-cases` repo may be a **stale simplified copy** missing several local files. Don't just push the new file — run a diff first. **Workflow**:
+  1. After `git clone`, run `ls /tmp/ylindx-push/references/` and compare against `ls ~/.hermes/skills/yilin-mentor-lineage/references/`
+  2. Files in local but NOT in remote = missing专题 files (Erik's local skill is the canonical version, remote is just a stale snapshot). Examples observed 2026-07-27: remote was missing `eye_red_eye_disease.md`, `shingles_herpes_zoster.md`, `sheng_jiang_san_variants.md`, `session_log_2026_07_13_broad_typhoid.md`, `session_log_2026_07_10_fang_jie.md`
+  3. Files in BOTH but different sizes = remote is an older version. Diff and copy the local version over if local has been updated
+  4. Copy all missing/stale files from local → remote, then commit + push as ONE atomic commit (e.g. "Add mouth_dry_not_thirsty + sync SKILL.md + restore 5 missing 专题 files to canonical local version")
+  5. Erik's preference: **always push the complete local version upstream**, overwriting whatever simplified version is there. Never push a partial state that leaves remote broken (missing references that SKILL.md cites).
 - **Pitfall**: SKILL.md size — the GitHub `ylindx-medical-cases` SKILL.md is **whatever is currently upstream** (NOT a fixed size; observed sizes have ranged from 11KB to 32KB depending on what was last pushed). The local SKILL.md is always the complete running version. Erik's preference is to PUSH the complete local version upstream, overwriting whatever is there. Use `diff` before pushing to spot-check, especially if the upstream is suspiciously small (could indicate a stale simplified version).
-- **Pitfall — CACHE LAYER**: After pushing, the `raw.githubusercontent.com` URL may return 200 for most files but `HTTP 000` (rate limit / cache miss) for others. Retry individual files with `sleep 3` between attempts, or verify via `gh api repos/<owner>/<repo>/contents/<path>` which goes through GitHub's auth and is not rate-limited the same way.
+- **Pitfall — CACHE LAYER**: After pushing, the `raw.githubusercontent.com` URL may return 200 for most files but `HTTP 000` (rate limit / cache miss) for others, AND — more commonly observed 2026-07-27 — may **return the OLD version** of a file that you just updated (e.g. SKILL.md shows 0 hits for a string that you know is in the new version). **Fix**: `sleep 8` (not `sleep 3`) before the first verification curl, then `sleep 3` between retries. If still stale, verify via `gh api repos/<owner>/<repo>/contents/<path>` which goes through GitHub's auth and is not rate-limited the same way. **Diagnosis pattern**: if the file size in `curl -sI | grep -i content-length` matches the OLD size (not your local size), it's cache, not push failure. Re-curl after sleep.
 
 ### Push flow (concrete commands, after auth)
 
@@ -754,6 +810,7 @@ For more detail, grep `references/full_transcript.md` with context lines to extr
 - `references/eye_red_eye_disease.md` — 眼红专题(病机三分法:肝胆郁热/水毒侵犯/燥热瘀血;辛凉法+明朗饮+葛根芩连加味三大证型方剂;含化学品灼伤案、师姐投稿红眼病5例).
 - `references/shingles_herpes_zoster.md` — 带状疱疹专题(辨证论治+专病专方双线:瓜蒌红花汤+升麻鳖甲汤+真武汤三大支柱;4篇核心医案对照+排邪反应识别+5大误治陷阱).
 - `references/mouth_dry_not_thirsty.md` — 「口燥不渴/口干不欲饮」专题(5 大病机:瘀血/水湿/肺气不宣/少阴阳虚/虚劳津亏;4 处仲景原文 + 7 个锚点医案;含五型对比速查表 + 临床决策流程图;与 blood_stasis_formulas.md 瘀血方剂总论对偶).
+- `方剂思维导图/` — 顶层目录(非 references/ 子目录),2026-08-05 同步自远端. 195 方剂脉舌提取专题(199 方 / 136 有专门案例 / 116 含脉舌数据),包括 `00_方阵思维导图主文件.md` (80KB 全集)、`00_方阵思维导图_mermaid版.md` (18KB 可视化)、`Batch_01.md ~ Batch_12.md` (138 方专门案例脉舌)、`Mentioned_Batch_01.md ~ Mentioned_Batch_10.md` (150 方正文提及脉舌). 行号引用可直接定位到 `full_transcript.md` L-行号.触发词:「方剂脉舌」「方剂思维导图」「脉象舌象反查」.
 
 **广义伤寒五视角系列约定:** 五个文件互为对偶,共享触发词表与一句话心法结构。视角1=经典理论(《难经》),视角2=传变轴(《伤寒论》),视角3=寒温一统(临床综合),全景索引=跨视角交叉,分卷阅读指南=实战阅读路径。Erik 的标准交付顺序是 **3 → 1 → 2 → 全景索引 → 分卷阅读指南** (empirical-first)。完整方法论见 SKILL.md "Step 4d — Multi-Perspective Classification Workflow" 和 "Step 4e — Reading Guide by Framework"。
 
