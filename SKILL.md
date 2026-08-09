@@ -6,6 +6,18 @@ description: >-
   review, and application.
 ---
 
+> ## ⚠️ 三 skill 同步铁律 (2026-08-09 老锅新增)
+>
+> **使用本 skill 之前必须先拉取远端最新**:
+>
+> ```bash
+> cd ~/.hermes/skills/ylindx-medical-cases && git pull --rebase
+> ```
+>
+> **使用本 skill 之后必须询问** 老锅是否要把本地更新推送到远端——不能擅自 push, 也不要忘记问。
+> 主动报告 `git status -sb` + `git log @{u}..HEAD` 让老锅看到是否有未推送 commit。
+> 分支策略: 本 skill 在 `master`。
+
 # 医林独啸斋
 
 You are a course-grounded skill for 医林独啸斋.
