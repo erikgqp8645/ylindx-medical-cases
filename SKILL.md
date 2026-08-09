@@ -51,6 +51,7 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 | 「口燥不渴」 / 「口干不欲饮」 / 「渴不欲饮」 / 「但欲漱水不欲咽」 / 「嗽水不欲咽」 / 「唇口干燥」 | `references/mouth_dry_not_thirsty.md` | 「口燥不渴」专题:5 大病机(瘀血/水湿/肺气不宣/少阴阳虚/虚劳津亏)+4 处仲景原文+7 个锚点医案,关键鉴别是真渴 vs 假渴 |
 | 「这个方子」 / 「方子构成」 / 「拆解这个方子」 / 「这个方是什么思路」 / 任意药物列表 | → run **Sub-Workflow: 方剂拆解分析** (below) | 拆方 → 锁定核心方 → 推主治证机(不调专题,只输出报告) |
 | 「帮我看看这个病例」 / 任意症状描述 | → run Reverse-Lookup Workflow | 拆证 → 锁定病机 → 调专题 |
+| 「方阵思维导图」 / 「A/B/C/D 四轴」 / 「方剂四维分类」 / 「外感内伤特殊病阵」 / 「病位 × 病邪 × 治法」 | `方剂思维导图/README.md`(→`方剂思维导图/00_方阵思维导图主文件.md`、mermaid 版、12 个 Batch、10 个 Mentioned) | 199 方剂按 **A 主分类(外感/内伤/特殊)× B 病位 × C 病邪 × D 治法** 四轴编码 + 175+ 案例脉舌提取(58.3% 含脉舌,带 L-行号),思源 Mermaid 可视化 |
 
 **Pitfall**: Don't say "让我先查一下" before loading. Load the file first, then read the relevant sections. Erik has zero tolerance for "I'll just describe it from memory" — he wants the original phrasing with line numbers.
 
@@ -96,6 +97,7 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 23. `references/eye_red_eye_disease.md` for 眼红专题 (病机三分法:肝胆郁热/水毒侵犯/燥热瘀血;辛凉法+明朗饮+葛根芩连加味三大证型方剂;含化学品灼伤案、师姐投稿红眼病5例;原 297-613 行跨篇).
 24. `references/shingles_herpes_zoster.md` for 带状疱疹专题 (辨证论治+专病专方双线:瓜蒌红花汤+升麻鳖甲汤+真武汤三大支柱;含突发/老人/后遗痛/大面积内外合治4篇核心医案;含排邪反应识别+5 大误治陷阱).
 25. `references/course_distillation.json` for 全部 456 lessons 结构化摘要(2026-08-04 同步自远端;head/case_index/lesson_summaries/diagnosis 字段;1.1MB,适合机器可读的全集操作).
+26. `方剂思维导图/README.md` as the entry index to the four-axis formula mind-map (A 主分类 × B 病位 × C 病邪 × D 治法), backed by `方剂思维导图/00_方阵思维导图主文件.md`(嵌套列表 80KB,199 方剂)+`方剂思维导图/00_方阵思维导图_mermaid版.md`(思源可渲染)+ Batch_01~12.md(138 方 175+ 案例脉舌)+ Mentioned_Batch_01~10.md(150 方正文提及). 跨目录资源,与 references/broad_typhoid_* 三视角系列正交(视角看"经",本目录看"方"的位).
 
 ## Topic-Bank Distillation Workflow (Erik's preferred pattern)
 
@@ -822,6 +824,7 @@ For more detail, grep `references/full_transcript.md` with context lines to extr
 - `references/eye_red_eye_disease.md` — 眼红专题(病机三分法:肝胆郁热/水毒侵犯/燥热瘀血;辛凉法+明朗饮+葛根芩连加味三大证型方剂;含化学品灼伤案、师姐投稿红眼病5例).
 - `references/shingles_herpes_zoster.md` — 带状疱疹专题(辨证论治+专病专方双线:瓜蒌红花汤+升麻鳖甲汤+真武汤三大支柱;4篇核心医案对照+排邪反应识别+5大误治陷阱).
 - `references/mouth_dry_not_thirsty.md` — 「口燥不渴/口干不欲饮」专题(5 大病机:瘀血/水湿/肺气不宣/少阴阳虚/虚劳津亏;4 处仲景原文 + 7 个锚点医案;含五型对比速查表 + 临床决策流程图;与 blood_stasis_formulas.md 瘀血方剂总论对偶).
+- `方剂思维导图/README.md` — 🆕 A/B/C/D 四轴方阵思维导图索引(主文件 80KB + mermaid 版 18KB + 12 Batch 案例脉舌 + 10 Mentioned 正文提及),199 方剂按 **A 主分类(外感/内伤/特殊病机)× B 病位(太阳/少阳/阳明…7 脏腑/瘀血/痹证/外科)× C 病邪(寒/热/湿/郁热/正虚/腑实…)× D 治法(汗/清/和/温/补/化湿/活血/攻下…)** 编码,175+ 案例已提取脉舌数据(58.3%),与 references/broad_typhoid_* 三视角系列正交.
 - `方剂思维导图/` — 顶层目录(非 references/ 子目录),2026-08-05 同步自远端. 195 方剂脉舌提取专题(199 方 / 136 有专门案例 / 116 含脉舌数据),包括 `00_方阵思维导图主文件.md` (80KB 全集)、`00_方阵思维导图_mermaid版.md` (18KB 可视化)、`Batch_01.md ~ Batch_12.md` (138 方专门案例脉舌)、`Mentioned_Batch_01.md ~ Mentioned_Batch_10.md` (150 方正文提及脉舌). 行号引用可直接定位到 `full_transcript.md` L-行号.触发词:「方剂脉舌」「方剂思维导图」「脉象舌象反查」.
 
 **广义伤寒五视角系列约定:** 五个文件互为对偶,共享触发词表与一句话心法结构。视角1=经典理论(《难经》),视角2=传变轴(《伤寒论》),视角3=寒温一统(临床综合),全景索引=跨视角交叉,分卷阅读指南=实战阅读路径。Erik 的标准交付顺序是 **3 → 1 → 2 → 全景索引 → 分卷阅读指南** (empirical-first)。完整方法论见 SKILL.md "Step 4d — Multi-Perspective Classification Workflow" 和 "Step 4e — Reading Guide by Framework"。
