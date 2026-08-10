@@ -1,3 +1,22 @@
+# macOS / Python 噪音
 .DS_Store
 *.pyc
 __pycache__/
+*.swp
+
+# 大文件 — 绝对不能进 git
+# images/: 4601 张医案配图,983 MB
+# 方剂思维导图/: 方剂思维导图 Batch_*.md + Mentioned_Batch_*.md,大文件区
+images/
+方剂思维导图/
+
+# hermes skill 元数据(跟远端无关)
+templates/
+
+# 本地工作区噪音
+*.bak
+*.tmp
+*.log
+.cache/
+.idea/
+.vscode/
