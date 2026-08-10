@@ -44,6 +44,7 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 | 「温病实用白术」 / 「湿温用白术」 / 「湿温病白术」 | `references/stagnant_heat_yure.md` + 三仁汤专题 | 湿温用苍术/白术体系(苍术托湿+炒白术固中) |
 | 「栀子豉汤」 / 「栀子豉」 | `references/gardenia_fermented_soybean_formula.md` | 栀子豉汤/表里双解体系 |
 | 「用药指征」 / 「方证」 / 「方证学」 / 「指征学」 / 「黄金指征」 / 「方证对应」 | `references/用药指征_方证学.md` | 用药指征·方证学(40 张核心方剂指征矩阵 + 9 大维度模板 + 类证鉴别 + 黄金指征 vs 辅助指征,医林独啸斋 90 篇「专题/方证」系统级文章总纲) |
+| 「附子」 / 「附子应用」 / 「附子指征」 / 「附子舌象」 / 「附子脉象」 / 「肾阳虚」 / 「上热下寒」 / 「潜阳丹」 / 「肾气丸」 / 「附子石膏并用」 | `references/附子_方证学.md` | 附子·方证学(216 篇含附子文章 + 6 大应用场景 + 5 类舌象 + 5 类脉象 + 附子石膏并用 + 4 大实战要点,医林独啸斋附子方证学子篇) |
 | 「小建中汤」 / 「建中汤」 / 「当归建中」 / 「黄芪建中」 / 「归芪建中」 / 「大建中」 | `references/jianzhong_tang_formula.md` | 小建中汤变法体系(8大类)+《千金》建中类方+实战医案,中医世家 225 卡片 + 医林独啸斋 61 篇文章 |
 | 「瘀血」 / 「淤血」 | `references/blood_stasis_formulas.md` | 瘀血专题 (10方剂、69篇) |
 | 「祛瘀方对比」 / 「逐瘀方对比」 / 「王清任逐瘀五方」 | `references/yuxue_fangji_comparison.md` | 11 大祛瘀方剂并列对比(王清任 5 方 + 经方 4 首 + 时方 2 首,含 5 步决策树 + 实战医案) |
@@ -82,22 +83,23 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 8. `references/gardenia_fermented_soybean_formula.md` for 栀子豉汤 formula-case mapping (18 articles, 重新定义为「表里双解体系」).
 9. `references/jianzhong_tang_formula.md` for 小建中汤变法体系(8大类:黄芪建中/当归建中/归芪建中/合过敏煎/合龙骨牡蛎/桂枝加芍药/大建中/《千金》建中类方),中医世家 225 张卡片 + 医林独啸斋 61 篇文章 + 6 朝代注解.
 10. `references/用药指征_方证学.md` for 用药指征·方证学总纲 (40 张核心方剂指征矩阵 + 9 大维度模板 + 类证鉴别 + 黄金指征 vs 辅助指征,医林独啸斋 90 篇「专题/方证」系统级文章总纲 + 4601 张医案配图参照).
-11. `references/damp_heat_three_formulas.md` for 湿热病机专题 (三仁汤 vs 甘露消毒丹 vs 藿朴夏苓汤三方对比, 含舌象决策图与临床路径).
-12. `references/cold_damp_vs_damp_heat.md` for 寒湿 vs 湿热 鉴别专题 (按部位分论寒湿、湿热假寒三大陷阱、5步速判法、病机转化).
-13. `references/sanren_tang_formula.md` for 三仁汤 formula-case mapping (分消湿热、宣上畅中渗下、合方体系、三禁, 231处文献).
-14. `references/zhangchi_misuse_hanfa_xref.md` for 张驰老师《伤寒论》「误用汗法/火逆/坏病」专题 × 医林独啸斋医案 跨库对照手册 (76 条误治条文按九阶段组织,25 条命中,139 篇医案映射,6 篇必读锚点).
-15. `references/zhangchi_67_357_cases_spectrum.md` for 张驰《伤寒论》67 条苓桂术甘 + 357 条麻黄升麻 跨库实案谱 (70 篇医案逐篇展开:67 条 34 篇 + 357 条 36 篇,含主诉/方剂/病机/张驰对应/学习路径).
-16. `references/sheng_jiang_san_variants.md` for 升降散变法·医案·处方汇编 (29种变法速查,与 stagnant_heat_yure.md 病机专题对偶,聚焦"具体怎么改方").
-17. `references/broad_typhoid_nine_grid.md` for 广义伤寒分类·视角3·寒温一统九宫格 (表/半表半里/里 × 寒/热/湿 = 9 格 + 9 类跨格专题,456 篇统计).
-18. `references/broad_typhoid_five_categories.md` for 广义伤寒分类·视角1·《难经》五分类 (中风/伤寒/湿温/热病/温病,各病证经典方剂+40篇医案+卫气营血/三焦对接).
-19. `references/broad_typhoid_six_channels.md` for 广义伤寒分类·视角2·六经传变轴 (太阳→阳明→少阳→太阴→少阴→厥阴,7类传变路径+合病并病处理原则,40+篇医案).
-20. `references/broad_typhoid_overview.md` for 广义伤寒分类·全景索引 (三视角交叉对照+15个跨视角锚点医案+临床三步实战模板;64% 医案需三视角联合定位).
-21. `references/broad_typhoid_reading_guide.md` for 广义伤寒·六经分卷阅读指南 (六卷+三附卷,429 篇医案按经层组织,新手/进阶/临床三档阅读路径).
-22. `references/course_package.json` for normalized package objects when structured lookup is needed.
-23. `references/full_transcript.md` for original wording when detailed citation is required.
-24. `references/eye_red_eye_disease.md` for 眼红专题 (病机三分法:肝胆郁热/水毒侵犯/燥热瘀血;辛凉法+明朗饮+葛根芩连加味三大证型方剂;含化学品灼伤案、师姐投稿红眼病5例;原 297-613 行跨篇).
-25. `references/shingles_herpes_zoster.md` for 带状疱疹专题 (辨证论治+专病专方双线:瓜蒌红花汤+升麻鳖甲汤+真武汤三大支柱;含突发/老人/后遗痛/大面积内外合治4篇核心医案;含排邪反应识别+5 大误治陷阱).
-26. `references/course_distillation.json` for 全部 456 lessons 结构化摘要(2026-08-04 同步自远端;head/case_index/lesson_summaries/diagnosis 字段;1.1MB,适合机器可读的全集操作).
+11. `references/附子_方证学.md` for 附子·方证学子篇 (216 篇含附子文章 + 三联病机 + 6 大场景 + 5 类舌象 + 5 类脉象 + 附子石膏并用 + 4 大实战要点,医林独啸斋附子方证学总纲).
+12. `references/damp_heat_three_formulas.md` for 湿热病机专题 (三仁汤 vs 甘露消毒丹 vs 藿朴夏苓汤三方对比, 含舌象决策图与临床路径).
+13. `references/cold_damp_vs_damp_heat.md` for 寒湿 vs 湿热 鉴别专题 (按部位分论寒湿、湿热假寒三大陷阱、5步速判法、病机转化).
+14. `references/sanren_tang_formula.md` for 三仁汤 formula-case mapping (分消湿热、宣上畅中渗下、合方体系、三禁, 231处文献).
+15. `references/zhangchi_misuse_hanfa_xref.md` for 张驰老师《伤寒论》「误用汗法/火逆/坏病」专题 × 医林独啸斋医案 跨库对照手册 (76 条误治条文按九阶段组织,25 条命中,139 篇医案映射,6 篇必读锚点).
+16. `references/zhangchi_67_357_cases_spectrum.md` for 张驰《伤寒论》67 条苓桂术甘 + 357 条麻黄升麻 跨库实案谱 (70 篇医案逐篇展开:67 条 34 篇 + 357 条 36 篇,含主诉/方剂/病机/张驰对应/学习路径).
+17. `references/sheng_jiang_san_variants.md` for 升降散变法·医案·处方汇编 (29种变法速查,与 stagnant_heat_yure.md 病机专题对偶,聚焦"具体怎么改方").
+18. `references/broad_typhoid_nine_grid.md` for 广义伤寒分类·视角3·寒温一统九宫格 (表/半表半里/里 × 寒/热/湿 = 9 格 + 9 类跨格专题,456 篇统计).
+19. `references/broad_typhoid_five_categories.md` for 广义伤寒分类·视角1·《难经》五分类 (中风/伤寒/湿温/热病/温病,各病证经典方剂+40篇医案+卫气营血/三焦对接).
+20. `references/broad_typhoid_six_channels.md` for 广义伤寒分类·视角2·六经传变轴 (太阳→阳明→少阳→太阴→少阴→厥阴,7类传变路径+合病并病处理原则,40+篇医案).
+21. `references/broad_typhoid_overview.md` for 广义伤寒分类·全景索引 (三视角交叉对照+15个跨视角锚点医案+临床三步实战模板;64% 医案需三视角联合定位).
+22. `references/broad_typhoid_reading_guide.md` for 广义伤寒·六经分卷阅读指南 (六卷+三附卷,429 篇医案按经层组织,新手/进阶/临床三档阅读路径).
+23. `references/course_package.json` for normalized package objects when structured lookup is needed.
+24. `references/full_transcript.md` for original wording when detailed citation is required.
+25. `references/eye_red_eye_disease.md` for 眼红专题 (病机三分法:肝胆郁热/水毒侵犯/燥热瘀血;辛凉法+明朗饮+葛根芩连加味三大证型方剂;含化学品灼伤案、师姐投稿红眼病5例;原 297-613 行跨篇).
+26. `references/shingles_herpes_zoster.md` for 带状疱疹专题 (辨证论治+专病专方双线:瓜蒌红花汤+升麻鳖甲汤+真武汤三大支柱;含突发/老人/后遗痛/大面积内外合治4篇核心医案;含排邪反应识别+5 大误治陷阱).
+27. `references/course_distillation.json` for 全部 456 lessons 结构化摘要(2026-08-04 同步自远端;head/case_index/lesson_summaries/diagnosis 字段;1.1MB,适合机器可读的全集操作).
 
 ## Topic-Bank Distillation Workflow (Erik's preferred pattern)
 
@@ -816,6 +818,7 @@ For more detail, grep `references/full_transcript.md` with context lines to extr
 - `references/cold_damp_vs_damp_heat.md` — 寒湿 vs 湿热 鉴别专题 (按部位分论寒湿、湿热假寒三大陷阱、5步速判法、病机转化).
 - `references/jianzhong_tang_formula.md` — 小建中汤变法体系(8大类:黄芪/当归/归芪/合过敏煎/合龙骨牡蛎/桂枝加芍药/大建中/《千金》建中类方,中医世家 225 卡片 + 医林独啸斋 61 篇,含6朝代注解+10个实战医案索引).
 - `references/用药指征_方证学.md` — 用药指征·方证学总纲 (40 张核心方剂指征矩阵 + 9 大维度模板 + 类证鉴别,医林独啸斋 90 篇「专题/方证」系统级文章总纲,4601 张医案配图参照).
+- `references/附子_方证学.md` — 附子·方证学子篇 (216 篇含附子文章 + 三联病机 + 6 大应用场景 + 5 类舌象 + 5 类脉象 + 附子石膏并用 + 4 大实战要点,医林独啸斋附子方证学总纲).
 - `references/yuxue_fangji_comparison.md` — 11 大祛瘀方剂并列对比手册(王清任逐瘀五方 + 经方 4 首 + 时方 2 首,含 14 节 + 5 步决策树 + 实战医案,33.5 KB / 908 行).
 - `references/broad_typhoid_nine_grid.md` — 广义伤寒分类·寒温一统九宫格(视角3,含35+篇核心医案,医林独啸斋456篇统计).
 - `references/broad_typhoid_five_categories.md` — 广义伤寒分类·《难经》五分类(视角1,中风/伤寒/湿温/热病/温病,40+篇医案+卫气营血对接).
