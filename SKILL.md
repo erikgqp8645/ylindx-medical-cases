@@ -51,6 +51,7 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 | 「带状疱疹」 / 「蛇盘疮」 / 「缠腰火丹」 / 「过腰蛇」 / 「带疱后遗神经痛」 / 「升麻鳖甲汤治带疱」 | `references/shingles_herpes_zoster.md` | 带疱专病专方:瓜蒌红花汤+升麻鳖甲汤+真武汤三方合用体系,含早治窗口期提醒 |
 | 「口燥不渴」 / 「口干不欲饮」 / 「渴不欲饮」 / 「但欲漱水不欲咽」 / 「嗽水不欲咽」 / 「唇口干燥」 | `references/mouth_dry_not_thirsty.md` | 「口燥不渴」专题:5 大病机(瘀血/水湿/肺气不宣/少阴阳虚/虚劳津亏)+4 处仲景原文+7 个锚点医案,关键鉴别是真渴 vs 假渴 |
 | 「上热下寒」 / 「下焦寒」 / 「寒热错杂」 / 「真假热」 / 「上热下寒鉴别」 | `references/shang_re_xia_han.md` | 上热下寒·鉴别专题(55 篇:上热下寒并存45+下焦寒10,6 篇系统论述专题,5 维辨证速查表+决策流程图+5 维治法对比+11 锚点速查;Erik 2026-08-11 反馈「郁热专题没讲清郁热 vs 下焦寒」后蒸馏) |
+| 「小扶阳法」 / 「扶阳法」 / 「附子配石膏」 / 「石膏配附子」 / 「麻附辛+辛凉」 | `references/xiao_fu_yang_fa.md` | 小扶阳法专题(Erik 自创治法:附子 3-6g + 石膏扶下焦肾阳而清中上焦火热,15 篇核心医案含 7 篇小儿高烧+老人/重症+系统论述;含辨证 5 件套金标准+5 处方思路对比+6 误治警示+决策流程图+辨证速查表) |
 | 「这个方子」 / 「方子构成」 / 「拆解这个方子」 / 「这个方是什么思路」 / 任意药物列表 | → run **Sub-Workflow: 方剂拆解分析** (below) | 拆方 → 锁定核心方 → 推主治证机(不调专题,只输出报告) |
 | 「帮我看看这个病例」 / 任意症状描述 | → run Reverse-Lookup Workflow | 拆证 → 锁定病机 → 调专题 |
 | 「外感病阵」 / 「42 方」 / 「42 方案例索引」 / 「42 方学习卡片」 / 「外感病阵 B/C/D」 | `references/wsy_42fang_case_index.md` + `references/wsy_42fang_study_cards.md` | 外感病阵 42 方·A 表案例对应索引(67方逐条表格 ✅案数/📊脉舌/📝提及/⚠️零案例 四种图例)+ C 表学习卡片(67 张含 🎯核心病机 + 🔑辨证要点 3 把钥匙 + 💡学习提示 + 📚关联案例前 3 主推)。与 `方剂思维导图/00_方阵思维导图主文件.md`(外感病阵 B/C/D 层级)配对使用。 |
@@ -105,6 +106,7 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 28. `references/wsy_42fang_study_cards.md` for 外感病阵 42 方·C 表学习卡片 (67 张卡片按 B1→B2→B3 顺序,每张含 🎯核心病机 + 🔑辨证要点 3 把钥匙 + 💡学习提示 + 📚关联案例前 3 主推;与 case_index.md 配套,4 档学习顺序).
 29. `references/wsy_42fang_case_full.md` for 外感病阵 42 方·B 表完整案例清单 (37 个 ✅主方案剂 × 全部关联标题按 9 大病证聚类展开 + ASCII bar 占比 + 7 大统计矩阵:方剂频次 Top 15 / 病证谱 Top 10 / 病证 × Top 5 方剂 / 病证 × Top 3 方剂 / 跨方合用 Top 10 / 覆盖率 / 推荐学习顺序;主索引 A 表的 100+ KB 全量版,数据源 course_package.json 456 lessons 全文检索).
 30. `references/shang_re_xia_han.md` for 「上热下寒」鉴别专题 (55 篇:上热下寒并存45+下焦寒10,按病机+病证双维组织;含6 篇系统论述/专题深度提炼 + 5 维辨证速查表(舌象/寒热/脉/渴/病程)+ ASCII 决策流程图 + 5 维治法对比表(分治·清上/温下/合治·寒热并用/小扶阳法/局部清上)+ 11 锚点辨证速查 + 跨专题链接;数据源 course_package.json 全文检索,2026-08-11 蒸馏,填补 stagnant_heat_yure.md 没讲清郁热 vs 下焦寒鉴别的空白).
+31. `references/xiao_fu_yang_fa.md` for 「小扶阳法」专题 (Erik 自创治法:附子 3-6g + 石膏扶下焦肾阳而清中上焦火热;15 篇核心医案(7 篇小儿高烧 + 老人/重症 + 系统论述)+ 小扶阳法 vs 大扶阳法 6 维对比 + 辨证金标准 5 件套 + 5 种处方思路对比 + 6 条误治警示 + ASCII 决策流程图 + 辨证速查表;数据源 course_package.json 全文检索,2026-08-11 蒸馏).
 
 ## Topic-Bank Distillation Workflow (Erik's preferred pattern)
 
@@ -836,6 +838,7 @@ For more detail, grep `references/full_transcript.md` with context lines to extr
 - `references/wsy_42fang_case_index.md` + `references/wsy_42fang_study_cards.md` — 外感病阵 42 方专题 (A 表案例索引 + C 表学习卡片,67 方按 B/C/D 层级组织,推荐学习顺序 6 必学+15 重点+36 一般+10 了解即可;配套 `方剂思维导图/00_方阵思维导图主文件.md` 查阅 B/C/D 层级定位).
 - `references/wsy_42fang_case_full.md` — 外感病阵 42 方·B 表完整案例清单 (37 个 ✅主方案剂 × 全部关联标题按 9 大病证聚类展开 + ASCII bar + 7 大统计矩阵;主索引 A 表的 100+ KB 全量版,A 表 3 标题不够时调此文件).
 - `references/shang_re_xia_han.md` — 「上热下寒」鉴别专题 (55 篇 + 5 维辨证速查 + ASCII 决策流程图 + 5 维治法对比 + 6 篇系统论述深度提炼;Erik 2026-08-11 反馈「郁热专题没讲清郁热 vs 下焦寒」后蒸馏;与 `stagnant_heat_yure.md`(郁热专题)对偶互补).
+- `references/xiao_fu_yang_fa.md` — 「小扶阳法」专题 (Erik 自创治法:附子 3-6g + 石膏扶下焦肾阳而清中上焦火热;15 篇核心医案 + 辨证 5 件套 + 5 处方思路对比 + 6 误治警示 + ASCII 决策流程图;与 `shang_re_xia_han.md` 的「5 维治法对比表」中「小扶阳法」节深度对偶).
 
 **广义伤寒五视角系列约定:** 五个文件互为对偶,共享触发词表与一句话心法结构。视角1=经典理论(《难经》),视角2=传变轴(《伤寒论》),视角3=寒温一统(临床综合),全景索引=跨视角交叉,分卷阅读指南=实战阅读路径。Erik 的标准交付顺序是 **3 → 1 → 2 → 全景索引 → 分卷阅读指南** (empirical-first)。完整方法论见 SKILL.md "Step 4d — Multi-Perspective Classification Workflow" 和 "Step 4e — Reading Guide by Framework"。
 
