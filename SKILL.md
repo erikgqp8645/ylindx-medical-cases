@@ -52,7 +52,8 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 | 「口燥不渴」 / 「口干不欲饮」 / 「渴不欲饮」 / 「但欲漱水不欲咽」 / 「嗽水不欲咽」 / 「唇口干燥」 | `references/mouth_dry_not_thirsty.md` | 「口燥不渴」专题:5 大病机(瘀血/水湿/肺气不宣/少阴阳虚/虚劳津亏)+4 处仲景原文+7 个锚点医案,关键鉴别是真渴 vs 假渴 |
 | 「这个方子」 / 「方子构成」 / 「拆解这个方子」 / 「这个方是什么思路」 / 任意药物列表 | → run **Sub-Workflow: 方剂拆解分析** (below) | 拆方 → 锁定核心方 → 推主治证机(不调专题,只输出报告) |
 | 「帮我看看这个病例」 / 任意症状描述 | → run Reverse-Lookup Workflow | 拆证 → 锁定病机 → 调专题 |
-| 「外感病阵」 / 「42 方」 / 「42 方案例索引」 / 「42 方学习卡片」 / 「外感病阵 B/C/D」 | `references/wsy_42fang_case_index.md` + `references/wsy_42fang_study_cards.md` | 外感病阵 42 方·A 表案例对应索引(67方逐条表格 ✅案数/📊脉舌/📝提及/⚠️零案例 四种图例)+ C 表学习卡片(67 张含 🎯核心病机 + 🔑辨证要点 3 把钥匙 + 💡学习提示 + 📚关联案例前 3 主推)。与 `方剂思维导图/00_方阵思维导图主文件.md`(外感病阵 B/C/D 层级)配对使用。
+| 「外感病阵」 / 「42 方」 / 「42 方案例索引」 / 「42 方学习卡片」 / 「外感病阵 B/C/D」 | `references/wsy_42fang_case_index.md` + `references/wsy_42fang_study_cards.md` | 外感病阵 42 方·A 表案例对应索引(67方逐条表格 ✅案数/📊脉舌/📝提及/⚠️零案例 四种图例)+ C 表学习卡片(67 张含 🎯核心病机 + 🔑辨证要点 3 把钥匙 + 💡学习提示 + 📚关联案例前 3 主推)。与 `方剂思维导图/00_方阵思维导图主文件.md`(外感病阵 B/C/D 层级)配对使用。 |
+| 「外感病阵 B 表」 / 「完整案例清单」 / 「42 方全案例」 / 「外感病阵完整清单」 | `references/wsy_42fang_case_full.md` | 外感病阵 42 方·B 表完整案例清单(37 个 ✅主方案剂 × 全部关联标题按 9 大病证聚类展开 + ASCII bar + 统计矩阵,主索引 A 表的 100+ KB 全量版) |
 
 **Pitfall**: Don't say "让我先查一下" before loading. Load the file first, then read the relevant sections. Erik has zero tolerance for "I'll just describe it from memory" — he wants the original phrasing with line numbers.
 
@@ -101,6 +102,7 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 26. `references/course_distillation.json` for 全部 456 lessons 结构化摘要(2026-08-04 同步自远端;head/case_index/lesson_summaries/diagnosis 字段;1.1MB,适合机器可读的全集操作).
 27. `references/wsy_42fang_case_index.md` for 外感病阵 42 方·A 表案例对应索引 (67 方逐条表格 ✅案数/📊脉舌/📝提及/⚠️零案例 四种图例,B1太阳/B2少阳/B3阳明 按 B/C/D 层级组织,推荐学习顺序 6 必学+15 重点+36 一般+10 了解即可,数据源 course_package.json 456 lessons 全文检索).
 28. `references/wsy_42fang_study_cards.md` for 外感病阵 42 方·C 表学习卡片 (67 张卡片按 B1→B2→B3 顺序,每张含 🎯核心病机 + 🔑辨证要点 3 把钥匙 + 💡学习提示 + 📚关联案例前 3 主推;与 case_index.md 配套,4 档学习顺序).
+29. `references/wsy_42fang_case_full.md` for 外感病阵 42 方·B 表完整案例清单 (37 个 ✅主方案剂 × 全部关联标题按 9 大病证聚类展开 + ASCII bar 占比 + 7 大统计矩阵:方剂频次 Top 15 / 病证谱 Top 10 / 病证 × Top 5 方剂 / 病证 × Top 3 方剂 / 跨方合用 Top 10 / 覆盖率 / 推荐学习顺序;主索引 A 表的 100+ KB 全量版,数据源 course_package.json 456 lessons 全文检索).
 
 ## Topic-Bank Distillation Workflow (Erik's preferred pattern)
 
@@ -830,6 +832,7 @@ For more detail, grep `references/full_transcript.md` with context lines to extr
 - `references/mouth_dry_not_thirsty.md` — 「口燥不渴/口干不欲饮」专题(5 大病机:瘀血/水湿/肺气不宣/少阴阳虚/虚劳津亏;4 处仲景原文 + 7 个锚点医案;含五型对比速查表 + 临床决策流程图;与 blood_stasis_formulas.md 瘀血方剂总论对偶).
 - `方剂思维导图/` — 顶层目录(非 references/ 子目录),2026-08-05 同步自远端. 195 方剂脉舌提取专题(199 方 / 136 有专门案例 / 116 含脉舌数据),包括 `00_方阵思维导图主文件.md` (80KB 全集)、`00_方阵思维导图_mermaid版.md` (18KB 可视化)、`Batch_01.md ~ Batch_12.md` (138 方专门案例脉舌)、`Mentioned_Batch_01.md ~ Mentioned_Batch_10.md` (150 方正文提及脉舌). 行号引用可直接定位到 `full_transcript.md` L-行号.触发词:「方剂脉舌」「方剂思维导图」「脉象舌象反查」.
 - `references/wsy_42fang_case_index.md` + `references/wsy_42fang_study_cards.md` — 外感病阵 42 方专题 (A 表案例索引 + C 表学习卡片,67 方按 B/C/D 层级组织,推荐学习顺序 6 必学+15 重点+36 一般+10 了解即可;配套 `方剂思维导图/00_方阵思维导图主文件.md` 查阅 B/C/D 层级定位).
+- `references/wsy_42fang_case_full.md` — 外感病阵 42 方·B 表完整案例清单 (37 个 ✅主方案剂 × 全部关联标题按 9 大病证聚类展开 + ASCII bar + 7 大统计矩阵;主索引 A 表的 100+ KB 全量版,A 表 3 标题不够时调此文件).
 
 **广义伤寒五视角系列约定:** 五个文件互为对偶,共享触发词表与一句话心法结构。视角1=经典理论(《难经》),视角2=传变轴(《伤寒论》),视角3=寒温一统(临床综合),全景索引=跨视角交叉,分卷阅读指南=实战阅读路径。Erik 的标准交付顺序是 **3 → 1 → 2 → 全景索引 → 分卷阅读指南** (empirical-first)。完整方法论见 SKILL.md "Step 4d — Multi-Perspective Classification Workflow" 和 "Step 4e — Reading Guide by Framework"。
 
