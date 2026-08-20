@@ -53,6 +53,7 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 | 「上热下寒」 / 「下焦寒」 / 「寒热错杂」 / 「真假热」 / 「上热下寒鉴别」 | `references/shang_re_xia_han.md` | 上热下寒·鉴别专题(55 篇:上热下寒并存45+下焦寒10,6 篇系统论述专题,5 维辨证速查表+决策流程图+5 维治法对比+11 锚点速查;Erik 2026-08-11 反馈「郁热专题没讲清郁热 vs 下焦寒」后蒸馏) |
 | 「活血化瘀」 / 「祛瘀血」 / 「逐瘀」 / 「35 方祛瘀」 / 「所有祛瘀方剂」 | `references/all_yuxue_fangji.md` | 所有活血化瘀方剂完整对比(35 方:经方13+王清任7+时方8+四物汤类3+中成药/其他4;含 5 大类组织 + 3 维决策树(病位×病机×强度)+ Erik 实战心法 8 条 + 31 项辨证速查;保留前次 8 方下焦瘀血对比 + 增加 27 方活血化瘀方剂;Erik 2026-08-11「别起一段增加所有活血化瘀方剂」后蒸馏)|
 | 「小扶阳法」 / 「扶阳法」 / 「附子配石膏」 / 「石膏配附子」 / 「麻附辛+辛凉」 | `references/xiao_fu_yang_fa.md` | 小扶阳法专题(Erik 自创治法:附子 3-6g + 石膏扶下焦肾阳而清中上焦火热,15 篇核心医案含 7 篇小儿高烧+老人/重症+系统论述;含辨证 5 件套金标准+5 处方思路对比+6 误治警示+决策流程图+辨证速查表) |
+| 「咽部血丝」 / 「咽部有血丝」 / 「咽部充血」 / 「咽部有郁热」 / 「咽喉肿痛红」 | `references/throat_blood_streaks.md` | 「咽部血丝」症状专题(5 大病机:咽部郁热/偏瘀血/寒邪郁闭/上热下寒/阳毒入血;与 `mouth_dry_not_thirsty.md` 对偶 — 一个走血络微观信号,一个走津液宏观分布;含严重度对照表 + 五病机对比速查 + 临床决策流程图 + 19 篇必读文献 + 辨证速查;Erik 2026-08-19 首次提出「咽部血丝」查证后蒸馏) |
 | 「这个方子」 / 「方子构成」 / 「拆解这个方子」 / 「这个方是什么思路」 / 任意药物列表 | → run **Sub-Workflow: 方剂拆解分析** (below) | 拆方 → 锁定核心方 → 推主治证机(不调专题,只输出报告) |
 | 「帮我看看这个病例」 / 任意症状描述 | → run Reverse-Lookup Workflow | 拆证 → 锁定病机 → 调专题 |
 | 「外感病阵」 / 「42 方」 / 「42 方案例索引」 / 「42 方学习卡片」 / 「外感病阵 B/C/D」 | `references/wsy_42fang_case_index.md` + `references/wsy_42fang_study_cards.md` | 外感病阵 42 方·A 表案例对应索引(67方逐条表格 ✅案数/📊脉舌/📝提及/⚠️零案例 四种图例)+ C 表学习卡片(67 张含 🎯核心病机 + 🔑辨证要点 3 把钥匙 + 💡学习提示 + 📚关联案例前 3 主推)。与 `方剂思维导图/00_方阵思维导图主文件.md`(外感病阵 B/C/D 层级)配对使用。 |
@@ -108,7 +109,8 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 29. `references/wsy_42fang_case_full.md` for 外感病阵 42 方·B 表完整案例清单 (37 个 ✅主方案剂 × 全部关联标题按 9 大病证聚类展开 + ASCII bar 占比 + 7 大统计矩阵:方剂频次 Top 15 / 病证谱 Top 10 / 病证 × Top 5 方剂 / 病证 × Top 3 方剂 / 跨方合用 Top 10 / 覆盖率 / 推荐学习顺序;主索引 A 表的 100+ KB 全量版,数据源 course_package.json 456 lessons 全文检索).
 30. `references/shang_re_xia_han.md` for 「上热下寒」鉴别专题 (55 篇:上热下寒并存45+下焦寒10,按病机+病证双维组织;含6 篇系统论述/专题深度提炼 + 5 维辨证速查表(舌象/寒热/脉/渴/病程)+ ASCII 决策流程图 + 5 维治法对比表(分治·清上/温下/合治·寒热并用/小扶阳法/局部清上)+ 11 锚点辨证速查 + 跨专题链接;数据源 course_package.json 全文检索,2026-08-11 蒸馏,填补 stagnant_heat_yure.md 没讲清郁热 vs 下焦寒鉴别的空白).
 31. `references/xiao_fu_yang_fa.md` for 「小扶阳法」专题 (Erik 自创治法:附子 3-6g + 石膏扶下焦肾阳而清中上焦火热;15 篇核心医案(7 篇小儿高烧 + 老人/重症 + 系统论述)+ 小扶阳法 vs 大扶阳法 6 维对比 + 辨证金标准 5 件套 + 5 种处方思路对比 + 6 条误治警示 + ASCII 决策流程图 + 辨证速查表;数据源 course_package.json 全文检索,2026-08-11 蒸馏).
-32. `references/all_yuxue_fangji.md` for 「所有活血化瘀方剂」完整对比专题 (35 方:经方13 + 王清任7 + 时方8 + 四物汤类3 + 中成药/其他4;保留前次 8 方下焦瘀血对比 + 增加 27 方活血化瘀方剂;含 5 大类组织(经方祛瘀体系/王清任逐瘀体系/时方活血/四物汤类方/中成药)+ 3 维决策树(病位×病机×强度)+ Erik 实战心法 8 条 + 31 项辨证速查;数据源 course_package.json 全文检索,2026-08-11 蒸馏,corpus 命中 26/35).
+32. `references/throat_blood_streaks.md` for 「咽部血丝」症状专题 (5 大病机:咽部郁热/偏瘀血/寒邪郁闭/上热下寒/阳毒入血;含严重度对照表(8 档望诊) + 五病机对比速查表 + ASCII 临床决策流程图 + 19 篇必读文献(4 档分级)+ 9 项辨证速查 + 5 条关键禁忌 + 11 段原文金句引用;与 `mouth_dry_not_thirsty.md`(口燥不渴)对偶互补 — 一个走血络微观信号,一个走津液宏观分布;数据源 course 全文检索,2026-08-19 蒸馏,精确「血丝」0 篇走近义簇(咽部有郁热 30+ 篇)).
+33. `references/all_yuxue_fangji.md` for 「所有活血化瘀方剂」完整对比专题 (35 方:经方13 + 王清任7 + 时方8 + 四物汤类3 + 中成药/其他4;保留前次 8 方下焦瘀血对比 + 增加 27 方活血化瘀方剂;含 5 大类组织(经方祛瘀体系/王清任逐瘀体系/时方活血/四物汤类方/中成药)+ 3 维决策树(病位×病机×强度)+ Erik 实战心法 8 条 + 31 项辨证速查;数据源 course_package.json 全文检索,2026-08-11 蒸馏,corpus 命中 26/35).
 
 ## Topic-Bank Distillation Workflow (Erik's preferred pattern)
 
@@ -842,6 +844,7 @@ For more detail, grep `references/full_transcript.md` with context lines to extr
 - `references/shang_re_xia_han.md` — 「上热下寒」鉴别专题 (55 篇 + 5 维辨证速查 + ASCII 决策流程图 + 5 维治法对比 + 6 篇系统论述深度提炼;Erik 2026-08-11 反馈「郁热专题没讲清郁热 vs 下焦寒」后蒸馏;与 `stagnant_heat_yure.md`(郁热专题)对偶互补).
 - `references/xiao_fu_yang_fa.md` — 「小扶阳法」专题 (Erik 自创治法:附子 3-6g + 石膏扶下焦肾阳而清中上焦火热;15 篇核心医案 + 辨证 5 件套 + 5 处方思路对比 + 6 误治警示 + ASCII 决策流程图;与 `shang_re_xia_han.md` 的「5 维治法对比表」中「小扶阳法」节深度对偶).
 - `references/all_yuxue_fangji.md` — 「所有活血化瘀方剂」完整对比专题 (35 方:经方13 + 王清任7 + 时方8 + 四物汤类3 + 中成药/其他4;保留前次 8 方下焦瘀血对比 + 增加 27 方活血化瘀方剂;含 5 大类组织 + 3 维决策树 + Erik 实战心法 8 条 + 31 项辨证速查;Erik 2026-08-11「别起一段增加所有活血化瘀方剂」后蒸馏;与 `yuxue_fangji_comparison.md`(11 大方剂详解)对偶互补).
+- `references/throat_blood_streaks.md` — 「咽部血丝」症状专题 (5 大病机:咽部郁热/偏瘀血/寒邪郁闭/上热下寒/阳毒入血;含 8 档严重度对照表 + 五病机对比速查 + ASCII 临床决策流程图 + 19 篇必读文献 + 9 项辨证速查 + 5 条关键禁忌 + 11 段原文金句引用;Erik 2026-08-19 首次提出「咽部血丝」查证后蒸馏;与 `mouth_dry_not_thirsty.md`(口燥不渴)对偶 — 共享喉科六味汤的基础方地位).
 
 **广义伤寒五视角系列约定:** 五个文件互为对偶,共享触发词表与一句话心法结构。视角1=经典理论(《难经》),视角2=传变轴(《伤寒论》),视角3=寒温一统(临床综合),全景索引=跨视角交叉,分卷阅读指南=实战阅读路径。Erik 的标准交付顺序是 **3 → 1 → 2 → 全景索引 → 分卷阅读指南** (empirical-first)。完整方法论见 SKILL.md "Step 4d — Multi-Perspective Classification Workflow" 和 "Step 4e — Reading Guide by Framework"。
 
