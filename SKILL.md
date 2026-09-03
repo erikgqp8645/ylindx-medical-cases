@@ -45,6 +45,7 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 | 「栀子豉汤」 / 「栀子豉」 | `references/gardenia_fermented_soybean_formula.md` | 栀子豉汤/表里双解体系 |
 | 「用药指征」 / 「方证」 / 「方证学」 / 「指征学」 / 「黄金指征」 / 「方证对应」 | `references/用药指征_方证学.md` | 用药指征·方证学(40 张核心方剂指征矩阵 + 9 大维度模板 + 类证鉴别 + 黄金指征 vs 辅助指征,医林独啸斋 90 篇「专题/方证」系统级文章总纲) |
 | 「小建中汤」 / 「建中汤」 / 「当归建中」 / 「黄芪建中」 / 「归芪建中」 / 「大建中」 | `references/jianzhong_tang_formula.md` | 小建中汤变法体系(8大类)+《千金》建中类方+实战医案,中医世家 225 卡片 + 医林独啸斋 61 篇文章 |
+| 「胃痛四合汤」 / 「胃痛四合方」 / 「焦树德胃痛」 / 「良附丸+百合乌药汤+丹参饮+失笑散」 | `references/weitong_sihe_tang.md` | 胃痛四合汤专题(焦树德四十年经验合方体系:良附丸+百合汤+丹参饮+失笑散 = 寒热错杂+燥湿错杂+瘀血胃病)+7大加减法+联用金铃子散/柴胡剂/安中散扩展+镜子先生临床验证医案(2026-09-03 蒸馏) |
 | 「瘀血」 / 「淤血」 | `references/blood_stasis_formulas.md` | 瘀血专题 (10方剂、69篇) |
 | 「祛瘀方对比」 / 「逐瘀方对比」 / 「王清任逐瘀五方」 | `references/yuxue_fangji_comparison.md` | 11 大祛瘀方剂并列对比(王清任 5 方 + 经方 4 首 + 时方 2 首,含 5 步决策树 + 实战医案) |
 | 「眼睛红」 / 「红眼病」 / 「目赤」 / 「眼充血」 / 「眼睛肿痛」 / 「红眼」 | `references/eye_red_eye_disease.md` | 眼红三分法:肝胆郁热/水毒侵犯/燥热瘀血(辛凉法+明朗饮+葛根芩连加味) |
@@ -87,30 +88,31 @@ Erik uses short Chinese phrases to invoke a specific topic bank by name. When yo
 7. `references/stagnant_heat_yure.md` for 郁热/火郁/宣透郁热法 mapping (146 articles, 赵绍琴理法).
 8. `references/gardenia_fermented_soybean_formula.md` for 栀子豉汤 formula-case mapping (18 articles, 重新定义为「表里双解体系」).
 9. `references/jianzhong_tang_formula.md` for 小建中汤变法体系(8大类:黄芪建中/当归建中/归芪建中/合过敏煎/合龙骨牡蛎/桂枝加芍药/大建中/《千金》建中类方),中医世家 225 张卡片 + 医林独啸斋 61 篇文章 + 6 朝代注解.
-10. `references/用药指征_方证学.md` for 用药指征·方证学总纲 (40 张核心方剂指征矩阵 + 9 大维度模板 + 类证鉴别 + 黄金指征 vs 辅助指征,医林独啸斋 90 篇「专题/方证」系统级文章总纲 + 4601 张医案配图参照).
-11. `references/damp_heat_three_formulas.md` for 湿热病机专题 (三仁汤 vs 甘露消毒丹 vs 藿朴夏苓汤三方对比, 含舌象决策图与临床路径).
-12. `references/cold_damp_vs_damp_heat.md` for 寒湿 vs 湿热 鉴别专题 (按部位分论寒湿、湿热假寒三大陷阱、5步速判法、病机转化).
-13. `references/sanren_tang_formula.md` for 三仁汤 formula-case mapping (分消湿热、宣上畅中渗下、合方体系、三禁, 231处文献).
-14. `references/zhangchi_misuse_hanfa_xref.md` for 张驰老师《伤寒论》「误用汗法/火逆/坏病」专题 × 医林独啸斋医案 跨库对照手册 (76 条误治条文按九阶段组织,25 条命中,139 篇医案映射,6 篇必读锚点).
-15. `references/zhangchi_67_357_cases_spectrum.md` for 张驰《伤寒论》67 条苓桂术甘 + 357 条麻黄升麻 跨库实案谱 (70 篇医案逐篇展开:67 条 34 篇 + 357 条 36 篇,含主诉/方剂/病机/张驰对应/学习路径).
-16. `references/sheng_jiang_san_variants.md` for 升降散变法·医案·处方汇编 (29种变法速查,与 stagnant_heat_yure.md 病机专题对偶,聚焦"具体怎么改方").
-17. `references/broad_typhoid_nine_grid.md` for 广义伤寒分类·视角3·寒温一统九宫格 (表/半表半里/里 × 寒/热/湿 = 9 格 + 9 类跨格专题,456 篇统计).
-18. `references/broad_typhoid_five_categories.md` for 广义伤寒分类·视角1·《难经》五分类 (中风/伤寒/湿温/热病/温病,各病证经典方剂+40篇医案+卫气营血/三焦对接).
-19. `references/broad_typhoid_six_channels.md` for 广义伤寒分类·视角2·六经传变轴 (太阳→阳明→少阳→太阴→少阴→厥阴,7类传变路径+合病并病处理原则,40+篇医案).
-20. `references/broad_typhoid_overview.md` for 广义伤寒分类·全景索引 (三视角交叉对照+15个跨视角锚点医案+临床三步实战模板;64% 医案需三视角联合定位).
-21. `references/broad_typhoid_reading_guide.md` for 广义伤寒·六经分卷阅读指南 (六卷+三附卷,429 篇医案按经层组织,新手/进阶/临床三档阅读路径).
-22. `references/course_package.json` for normalized package objects when structured lookup is needed.
-23. `references/full_transcript.md` for original wording when detailed citation is required.
-24. `references/eye_red_eye_disease.md` for 眼红专题 (病机三分法:肝胆郁热/水毒侵犯/燥热瘀血;辛凉法+明朗饮+葛根芩连加味三大证型方剂;含化学品灼伤案、师姐投稿红眼病5例;原 297-613 行跨篇).
-25. `references/shingles_herpes_zoster.md` for 带状疱疹专题 (辨证论治+专病专方双线:瓜蒌红花汤+升麻鳖甲汤+真武汤三大支柱;含突发/老人/后遗痛/大面积内外合治4篇核心医案;含排邪反应识别+5 大误治陷阱).
-26. `references/course_distillation.json` for 全部 456 lessons 结构化摘要(2026-08-04 同步自远端;head/case_index/lesson_summaries/diagnosis 字段;1.1MB,适合机器可读的全集操作).
-27. `references/wsy_42fang_case_index.md` for 外感病阵 42 方·A 表案例对应索引 (67 方逐条表格 ✅案数/📊脉舌/📝提及/⚠️零案例 四种图例,B1太阳/B2少阳/B3阳明 按 B/C/D 层级组织,推荐学习顺序 6 必学+15 重点+36 一般+10 了解即可,数据源 course_package.json 456 lessons 全文检索).
-28. `references/wsy_42fang_study_cards.md` for 外感病阵 42 方·C 表学习卡片 (67 张卡片按 B1→B2→B3 顺序,每张含 🎯核心病机 + 🔑辨证要点 3 把钥匙 + 💡学习提示 + 📚关联案例前 3 主推;与 case_index.md 配套,4 档学习顺序).
-29. `references/wsy_42fang_case_full.md` for 外感病阵 42 方·B 表完整案例清单 (37 个 ✅主方案剂 × 全部关联标题按 9 大病证聚类展开 + ASCII bar 占比 + 7 大统计矩阵:方剂频次 Top 15 / 病证谱 Top 10 / 病证 × Top 5 方剂 / 病证 × Top 3 方剂 / 跨方合用 Top 10 / 覆盖率 / 推荐学习顺序;主索引 A 表的 100+ KB 全量版,数据源 course_package.json 456 lessons 全文检索).
-30. `references/shang_re_xia_han.md` for 「上热下寒」鉴别专题 (55 篇:上热下寒并存45+下焦寒10,按病机+病证双维组织;含6 篇系统论述/专题深度提炼 + 5 维辨证速查表(舌象/寒热/脉/渴/病程)+ ASCII 决策流程图 + 5 维治法对比表(分治·清上/温下/合治·寒热并用/小扶阳法/局部清上)+ 11 锚点辨证速查 + 跨专题链接;数据源 course_package.json 全文检索,2026-08-11 蒸馏,填补 stagnant_heat_yure.md 没讲清郁热 vs 下焦寒鉴别的空白).
-31. `references/xiao_fu_yang_fa.md` for 「小扶阳法」专题 (Erik 自创治法:附子 3-6g + 石膏扶下焦肾阳而清中上焦火热;15 篇核心医案(7 篇小儿高烧 + 老人/重症 + 系统论述)+ 小扶阳法 vs 大扶阳法 6 维对比 + 辨证金标准 5 件套 + 5 种处方思路对比 + 6 条误治警示 + ASCII 决策流程图 + 辨证速查表;数据源 course_package.json 全文检索,2026-08-11 蒸馏).
-32. `references/throat_blood_streaks.md` for 「咽部血丝」症状专题 (5 大病机:咽部郁热/偏瘀血/寒邪郁闭/上热下寒/阳毒入血;含严重度对照表(8 档望诊) + 五病机对比速查表 + ASCII 临床决策流程图 + 19 篇必读文献(4 档分级)+ 9 项辨证速查 + 5 条关键禁忌 + 11 段原文金句引用;与 `mouth_dry_not_thirsty.md`(口燥不渴)对偶互补 — 一个走血络微观信号,一个走津液宏观分布;数据源 course 全文检索,2026-08-19 蒸馏,精确「血丝」0 篇走近义簇(咽部有郁热 30+ 篇)).
-33. `references/all_yuxue_fangji.md` for 「所有活血化瘀方剂」完整对比专题 (35 方:经方13 + 王清任7 + 时方8 + 四物汤类3 + 中成药/其他4;保留前次 8 方下焦瘀血对比 + 增加 27 方活血化瘀方剂;含 5 大类组织(经方祛瘀体系/王清任逐瘀体系/时方活血/四物汤类方/中成药)+ 3 维决策树(病位×病机×强度)+ Erik 实战心法 8 条 + 31 项辨证速查;数据源 course_package.json 全文检索,2026-08-11 蒸馏,corpus 命中 26/35).
+10. `references/weitong_sihe_tang.md` for 胃痛四合汤专题(焦树德四十年经验合方体系:良附丸+百合汤+丹参饮+失笑散 = 寒热错杂+燥湿错杂+瘀血胃病).7 大加减法 + 联用金铃子散/柴胡剂/安中散扩展 + 镜子先生临床验证医案 + 与 blood_stasis_formulas.md / all_yuxue_fangji.md 共享失笑散·丹参饮基础方.
+11. `references/用药指征_方证学.md` for 用药指征·方证学总纲 (40 张核心方剂指征矩阵 + 9 大维度模板 + 类证鉴别 + 黄金指征 vs 辅助指征,医林独啸斋 90 篇「专题/方证」系统级文章总纲 + 4601 张医案配图参照).
+12. `references/damp_heat_three_formulas.md` for 湿热病机专题 (三仁汤 vs 甘露消毒丹 vs 藿朴夏苓汤三方对比, 含舌象决策图与临床路径).
+13. `references/cold_damp_vs_damp_heat.md` for 寒湿 vs 湿热 鉴别专题 (按部位分论寒湿、湿热假寒三大陷阱、5步速判法、病机转化).
+14. `references/sanren_tang_formula.md` for 三仁汤 formula-case mapping (分消湿热、宣上畅中渗下、合方体系、三禁, 231处文献).
+15. `references/zhangchi_misuse_hanfa_xref.md` for 张驰老师《伤寒论》「误用汗法/火逆/坏病」专题 × 医林独啸斋医案 跨库对照手册 (76 条误治条文按九阶段组织,25 条命中,139 篇医案映射,6 篇必读锚点).
+16. `references/zhangchi_67_357_cases_spectrum.md` for 张驰《伤寒论》67 条苓桂术甘 + 357 条麻黄升麻 跨库实案谱 (70 篇医案逐篇展开:67 条 34 篇 + 357 条 36 篇,含主诉/方剂/病机/张驰对应/学习路径).
+17. `references/sheng_jiang_san_variants.md` for 升降散变法·医案·处方汇编 (29种变法速查,与 stagnant_heat_yure.md 病机专题对偶,聚焦"具体怎么改方").
+18. `references/broad_typhoid_nine_grid.md` for 广义伤寒分类·视角3·寒温一统九宫格 (表/半表半里/里 × 寒/热/湿 = 9 格 + 9 类跨格专题,456 篇统计).
+19. `references/broad_typhoid_five_categories.md` for 广义伤寒分类·视角1·《难经》五分类 (中风/伤寒/湿温/热病/温病,各病证经典方剂+40篇医案+卫气营血/三焦对接).
+20. `references/broad_typhoid_six_channels.md` for 广义伤寒分类·视角2·六经传变轴 (太阳→阳明→少阳→太阴→少阴→厥阴,7类传变路径+合病并病处理原则,40+篇医案).
+21. `references/broad_typhoid_overview.md` for 广义伤寒分类·全景索引 (三视角交叉对照+15个跨视角锚点医案+临床三步实战模板;64% 医案需三视角联合定位).
+22. `references/broad_typhoid_reading_guide.md` for 广义伤寒·六经分卷阅读指南 (六卷+三附卷,429 篇医案按经层组织,新手/进阶/临床三档阅读路径).
+23. `references/course_package.json` for normalized package objects when structured lookup is needed.
+24. `references/full_transcript.md` for original wording when detailed citation is required.
+25. `references/eye_red_eye_disease.md` for 眼红专题 (病机三分法:肝胆郁热/水毒侵犯/燥热瘀血;辛凉法+明朗饮+葛根芩连加味三大证型方剂;含化学品灼伤案、师姐投稿红眼病5例;原 297-613 行跨篇).
+26. `references/shingles_herpes_zoster.md` for 带状疱疹专题 (辨证论治+专病专方双线:瓜蒌红花汤+升麻鳖甲汤+真武汤三大支柱;含突发/老人/后遗痛/大面积内外合治4篇核心医案;含排邪反应识别+5 大误治陷阱).
+27. `references/course_distillation.json` for 全部 456 lessons 结构化摘要(2026-08-04 同步自远端;head/case_index/lesson_summaries/diagnosis 字段;1.1MB,适合机器可读的全集操作).
+28. `references/wsy_42fang_case_index.md` for 外感病阵 42 方·A 表案例对应索引 (67 方逐条表格 ✅案数/📊脉舌/📝提及/⚠️零案例 四种图例,B1太阳/B2少阳/B3阳明 按 B/C/D 层级组织,推荐学习顺序 6 必学+15 重点+36 一般+10 了解即可,数据源 course_package.json 456 lessons 全文检索).
+29. `references/wsy_42fang_study_cards.md` for 外感病阵 42 方·C 表学习卡片 (67 张卡片按 B1→B2→B3 顺序,每张含 🎯核心病机 + 🔑辨证要点 3 把钥匙 + 💡学习提示 + 📚关联案例前 3 主推;与 case_index.md 配套,4 档学习顺序).
+30. `references/wsy_42fang_case_full.md` for 外感病阵 42 方·B 表完整案例清单 (37 个 ✅主方案剂 × 全部关联标题按 9 大病证聚类展开 + ASCII bar 占比 + 7 大统计矩阵:方剂频次 Top 15 / 病证谱 Top 10 / 病证 × Top 5 方剂 / 病证 × Top 3 方剂 / 跨方合用 Top 10 / 覆盖率 / 推荐学习顺序;主索引 A 表的 100+ KB 全量版,数据源 course_package.json 456 lessons 全文检索).
+31. `references/shang_re_xia_han.md` for 「上热下寒」鉴别专题 (55 篇:上热下寒并存45+下焦寒10,按病机+病证双维组织;含6 篇系统论述/专题深度提炼 + 5 维辨证速查表(舌象/寒热/脉/渴/病程)+ ASCII 决策流程图 + 5 维治法对比表(分治·清上/温下/合治·寒热并用/小扶阳法/局部清上)+ 11 锚点辨证速查 + 跨专题链接;数据源 course_package.json 全文检索,2026-08-11 蒸馏,填补 stagnant_heat_yure.md 没讲清郁热 vs 下焦寒鉴别的空白).
+32. `references/xiao_fu_yang_fa.md` for 「小扶阳法」专题 (Erik 自创治法:附子 3-6g + 石膏扶下焦肾阳而清中上焦火热;15 篇核心医案(7 篇小儿高烧 + 老人/重症 + 系统论述)+ 小扶阳法 vs 大扶阳法 6 维对比 + 辨证金标准 5 件套 + 5 种处方思路对比 + 6 条误治警示 + ASCII 决策流程图 + 辨证速查表;数据源 course_package.json 全文检索,2026-08-11 蒸馏).
+33. `references/throat_blood_streaks.md` for 「咽部血丝」症状专题 (5 大病机:咽部郁热/偏瘀血/寒邪郁闭/上热下寒/阳毒入血;含严重度对照表(8 档望诊) + 五病机对比速查表 + ASCII 临床决策流程图 + 19 篇必读文献(4 档分级)+ 9 项辨证速查 + 5 条关键禁忌 + 11 段原文金句引用;与 `mouth_dry_not_thirsty.md`(口燥不渴)对偶互补 — 一个走血络微观信号,一个走津液宏观分布;数据源 course 全文检索,2026-08-19 蒸馏,精确「血丝」0 篇走近义簇(咽部有郁热 30+ 篇)).
+34. `references/all_yuxue_fangji.md` for 「所有活血化瘀方剂」完整对比专题 (35 方:经方13 + 王清任7 + 时方8 + 四物汤类3 + 中成药/其他4;保留前次 8 方下焦瘀血对比 + 增加 27 方活血化瘀方剂;含 5 大类组织(经方祛瘀体系/王清任逐瘀体系/时方活血/四物汤类方/中成药)+ 3 维决策树(病位×病机×强度)+ Erik 实战心法 8 条 + 31 项辨证速查;数据源 course_package.json 全文检索,2026-08-11 蒸馏,corpus 命中 26/35).
 
 ## Topic-Bank Distillation Workflow (Erik's preferred pattern)
 
@@ -187,10 +189,14 @@ Observed in `references/mouth_dry_not_thirsty.md`: when Erik asks about **a spec
 | 4b Differentiation | `<X>_vs_<Y>.md` | 「寒湿 vs 湿热」 |
 | 4c 病机 vs 变法 split | `<topic>_yure.md` + `<topic>_variants.md` | 「升降散」|
 | 4d Multi-perspective | `broad_<topic>_<perspective>.md` | 「广义伤寒」|
-| **4f Symptom-focused (新增)** | **`<symptom>_<modifier>.md`** (e.g. `mouth_dry_not_thirsty.md`) | **「口燥不渴」** |
+| **4f Symptom-focused (新增)** | **`<symptom>_<modifier>.md`** (e.g. `mouth_dry_not_thirsty.md`, `throat_blood_streaks.md`) | **「口燥不渴」/「咽部血丝」** |
 
 **Mandatory structure for symptom-focused topic banks**:
-1. **症状识别 (Symptom Identification)** — list all canonical expressions + corpus hit counts per near-synonym variant (e.g. 「口燥」/「不渴」/「口干不欲饮」/「渴不欲饮」/「但欲嗽水不欲咽」)
+1. **症状识别 (Symptom Identification)** — list all canonical expressions + corpus hit counts per near-synonym variant. **Pitfall — near-synonym cluster is mandatory, exact phrase almost always 0 hits**: observed in both shipped examples:
+   - `mouth_dry_not_thirsty.md`: 精确「口燥不渴」0 篇 → 近义簇(口干不欲饮/渴不欲饮/但欲漱水不欲咽)57+ 篇
+   - `throat_blood_streaks.md`: 精确「咽部血丝」0 篇 → 近义簇(咽部有郁热/咽部充血/喉科六味汤)30+ 篇
+   
+   Always grep a cluster (see SKILL.md "Symptom-focused grep needs near-synonym clusters" pitfall) and report the hit counts in a small table so Erik sees "精确 0 篇 vs 近义 30+ 篇" and understands why the bank covers N+ articles even when the canonical phrase matches none.
 2. **仲景原文 (Canonical Texts)** — verbatim 《金匮》/《伤寒》/《温病条辨》 passages with line numbers, distinguishing 经典瘀血条 / 温经汤条 / 渴-不渴鉴别条 etc.
 3. **病机分类 (Mechanism Classification)** — 3-7 mutually-exclusive 病机 buckets (e.g. mouth_dry_not_thirsty has 5: 瘀血/水湿/肺气不宣/少阴阳虚/虚劳津亏)
 4. **对比速查表 (Master Comparison Table)** — all 病机 buckets side-by-side: 渴/不渴 / 舌象 / 脉象 / 兼证 / 主方 / 病机本质
@@ -403,7 +409,7 @@ Standard layout for 6-jing-style:
 When you create a new `references/<topic>.md` file, you MUST update **three places in SKILL.md in the same turn** — they are coupled and the file is incomplete until all three are done:
 
 1. **Trigger Vocabulary table** (top of file) — add a new row mapping trigger phrases → file path → topic summary
-2. **Reference Priority numbered list** — add the new file in the right numerical slot (currently slots 1-19)
+2. **Reference Priority numbered list** — add the new file in the right numerical slot (currently slots 1-34; check with `grep -cE "^[0-9]+\. \`references/" SKILL.md` for the current count)
 3. **Pre-built Knowledge Banks bulleted list** (bottom) — add a one-line summary
 
 **Pitfall — SKILL.md Reference Priority numbering trap**: when patching the numbered Reference Priority list, your patch's `old_string` must match the CURRENT line numbers, not the original ones. If a prior patch already inserted an entry above your target, the line numbers shift down by 1 and your patch may silently duplicate an existing entry (e.g. patching entry #9 to add a new one before it, but #9 was already an earlier patch's target, so you end up with TWO entries pointing to the same file). Always `grep -n "<file_to_edit>" SKILL.md` after each patch to verify the numbering is still monotonic and unique. If a patch reports a "duplicate match" error, do NOT use `replace_all=true` — re-read the file, find the new actual location, and patch with the correct context.
@@ -426,15 +432,19 @@ When you create a new `references/<topic>.md` file, you MUST update **three plac
   3. This must run BEFORE the final verification at step 6
 
 **Pitfall — sed renumbering with placeholder prefix is fragile** (observed 2026-07-24): when reflowing Reference Priority numbers with `sed -i 's/^N\. /__NUM__N. /' && sed -i 's/^__NUM__M\. /newN. /'`, calling the renumber sed multiple times (one per number to remap) leaves `__NUM__` artifacts in some lines if the placeholder line was not in the affected range. **Fix**: do the whole renumbering block in ONE sed expression with multiple `-e` clauses, OR use Python with explicit string replace (which the existing 2026-07-13 pitfall recommends for big files anyway):
-  ```python
-  import re
-  with open('SKILL.md', 'r') as f: content = f.read()
-  matches = list(re.finditer(r'^(\d+)\. (`references/[^`]+`)', content, re.MULTILINE))
-  for i, m in enumerate(matches, 1):
-      content = content.replace(m.group(0), f"{i}. {m.group(2)}", 1)
-  with open('SKILL.md', 'w') as f: f.write(content)
-  ```
-  Then verify: `grep -cE "^__NUM__" SKILL.md` should return 0.
+```python
+import re
+with open('SKILL.md', 'r') as f: content = f.read()
+matches = list(re.finditer(r'^(\d+)\. (`references/[^`]+`)', content, re.MULTILINE))
+for i, m in enumerate(matches, 1):
+    content = content.replace(m.group(0), f"{i}. {m.group(2)}", 1)
+with open('SKILL.md', 'w') as f: f.write(content)
+```
+Then verify: `grep -cE "^__NUM__" SKILL.md` should return 0.
+
+**Pitfall — patch 工具追加新 numbered entry 不会检测编号冲突**(observed 2026-09-03, 胃痛四合汤专题蒸馏): 当用 `patch` 工具在第 N 行(例如 "9. jianzhong...")后面追加新行 "10. new_entry..." 时,**patch 工具只检查 old_string 唯一性,不会检查 N+1 这个编号是否已被现有 entry 占用**。如果下游已经有一个 "10. xxx",这次 patch 完成后会同时出现两个 "10.",而且 `patch` 不报错。**修复模式**:**永远先用 grep 找出当前段的最大编号,直接用 patch 写"新编号 = 最大+1",**而非盲信"前一条是 N,所以新条目是 N+1"。第二次踩坑(把 "10" 改成 "11" 但下游还有一个 "11")也是同一类 bug。**最稳的做法是不要分多次 patch 编号,直接用 Python 一刀切重排整个段**(见上面示例代码),然后用 `grep -oE "^[0-9]+\." SKILL.md | grep -E "^[0-9]+\.$" | sort -un` 验证 1-N 严格连续。
+
+**Pitfall — old_string 与新文件的"现在位置"不匹配**(observed 2026-09-03): SKILL.md "Reference Priority" 段里频繁出现的描述 "currently slots 1-19" 是 stale 数字(2026-08 已扩到 27,2026-09 扩到 34)。任何引用"当前 slot 数"的描述都会随时间漂移。**正确做法**:让 Pre-flight checklist 用 `grep -cE "^[0-9]+\. \`references/" SKILL.md` 动态探测,而不是写死数字。本会话把 line 412 "currently slots 1-19" 同步更新为 "currently slots 1-34"。
 
 **Mandatory post-patch verification** (must run, not optional):
 ```bash
@@ -828,6 +838,7 @@ For more detail, grep `references/full_transcript.md` with context lines to extr
 - `references/damp_heat_three_formulas.md` — 湿热病机专题 (三仁汤 vs 甘露消毒丹 vs 藿朴夏苓汤三方对比, 含舌象决策图、临床路径、医案索引).
 - `references/cold_damp_vs_damp_heat.md` — 寒湿 vs 湿热 鉴别专题 (按部位分论寒湿、湿热假寒三大陷阱、5步速判法、病机转化).
 - `references/jianzhong_tang_formula.md` — 小建中汤变法体系(8大类:黄芪/当归/归芪/合过敏煎/合龙骨牡蛎/桂枝加芍药/大建中/《千金》建中类方,中医世家 225 卡片 + 医林独啸斋 61 篇,含6朝代注解+10个实战医案索引).
+- `references/weitong_sihe_tang.md` — 「胃痛四合汤」专题(焦树德四十年经验合方体系:良附丸+百合汤+丹参饮+失笑散 = 寒热错杂+燥湿错杂+瘀血胃病;7大加减法 + 联用金铃子散→五合汤 / 柴胡剂 / 安中散扩展 + 镜子先生临床验证医案「一剂知四剂痊愈」;与 blood_stasis_formulas.md / all_yuxue_fangji.md 共享失笑散·丹参饮基础方;25 KB / 2026-09-03 蒸馏).
 - `references/用药指征_方证学.md` — 用药指征·方证学总纲 (40 张核心方剂指征矩阵 + 9 大维度模板 + 类证鉴别,医林独啸斋 90 篇「专题/方证」系统级文章总纲,4601 张医案配图参照).
 - `references/yuxue_fangji_comparison.md` — 11 大祛瘀方剂并列对比手册(王清任逐瘀五方 + 经方 4 首 + 时方 2 首,含 14 节 + 5 步决策树 + 实战医案,33.5 KB / 908 行).
 - `references/broad_typhoid_nine_grid.md` — 广义伤寒分类·寒温一统九宫格(视角3,含35+篇核心医案,医林独啸斋456篇统计).
